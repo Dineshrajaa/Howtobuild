@@ -1,3 +1,6 @@
+
+
+
 var loginMethods = {
     /*Landing page methods*/
     getFacebookProfileInfo: function(authResponse) {
@@ -5,8 +8,11 @@ var loginMethods = {
         var fbInfo = $.Deferred();
         facebookConnectPlugin.api('/me?fields=email,gender,name,age_range,location&access_token=' + authResponse.accessToken, null,
             function(response) {
-                console.log(JSON.stringify(response));
-                fbInfo.resolve(response);
+                console.log(response);
+				
+			//	alert(JSON.stringify(response));
+				
+                 fbInfo.resolve(response);
             },
             function(response) {
                 console.log(response);
@@ -31,28 +37,34 @@ var loginMethods = {
                             fbName: profileInfo.name,
                             fbEmail: profileInfo.email,
                             fbPicture: "http://graph.facebook.com/" + authResponse.userID + "/picture?type=large",
-                            fbGender: profileInfo.gender,
-                            fbLocation: profileInfo.location.name
-
+							fbGender: profileInfo.gender,
+							fbLocation :profileInfo.location.name
+							
                         });
 
                     }, function(fail) {
                         // Fail get profile info
                         console.log('profile info fail', fail);
                     })
-                } else {
-                    alert("You have already Logged in");
-                    var userdata = loginMethods.getUserInfo();
-                    if (userdata.gender == 'female') {
-                        //female category code 
-                        window.location = 'cart_Page.html'
-                    } else {
-                        window.location = 'cart_page_male.html'
-                    }
-                }
-            } else {
+                } else {  
+				alert("You have already Logged in");
+				 var userdata = loginMethods.getUserInfo();
+				 
+				if(userdata.fbGender == 'female')
+			   {
+				 //female category code 
+				window.location='cart_Page.html'
+				// window.location='cart_page_male.html'
+			   }
+			   else
+				{
+			      window.location='cart_page_male.html'
+				}
+				}
+            }
+            else{
                 // User has not Logged in already
-                facebookConnectPlugin.login(['email', 'public_profile', 'user_location'], loginMethods.fbLoginSuccess, loginMethods.fbLoginError);
+                facebookConnectPlugin.login(['email', 'public_profile','user_location'], loginMethods.fbLoginSuccess, loginMethods.fbLoginError);
             }
         }, function(error) {
             // Fail get profile info
@@ -62,7 +74,7 @@ var loginMethods = {
     setUserInfo: function(user_data) {
         // To save the User data in LocalStorage
         window.localStorage.fbUserData = JSON.stringify(user_data);
-        //alert(JSON.stringify(user_data));
+		//alert(JSON.stringify(user_data));
         //alert("Saved Profile information");
     },
     getUserInfo: function() {
@@ -78,8 +90,8 @@ var loginMethods = {
         }
         var authResponse = response.authResponse; // Save the authResponse
         loginMethods.getFacebookProfileInfo(authResponse).then(function(profileInfo) {
-
-            //alert(JSON.stringify(profileInfo));
+		
+		//alert(JSON.stringify(profileInfo));
             // Get the promise and save the response in LocalStorage
             loginMethods.setUserInfo({
                 authResponse: authResponse,
@@ -87,20 +99,36 @@ var loginMethods = {
                 fbName: profileInfo.name,
                 fbEmail: profileInfo.email,
                 fbPicture: "http://graph.facebook.com/" + authResponse.userID + "/picture?type=large",
-                fbGender: profileInfo.gender,
-                fbLocation: profileInfo.location.name
-
+				fbGender: profileInfo.gender,
+				fbLocation :profileInfo.location.name
+							
             });
-            if (profileInfo.gender == 'female') {
-                //female category code 
-                window.location = 'cart_Page.html'
-            } else {
-                window.location = 'cart_page_male.html'
-            }
+			
+	mixpanel.identify(profileInfo.email);
+			
+			mixpanel.people.set({
+          "$email": profileInfo.email,  
+	      "$last_login": new Date(), 
+          "$name": profileInfo.name
+               
+});
+mixpanel.people.increment({ "gender": profileInfo.gender});
 
+			
+			    if(profileInfo.gender=='female')
+			   {
+				 //female category code 
+				 //window.location='cart_page_male.html'
+				 window.location='cart_Page.html'
+			   }
+			   else
+				{
+			      window.location='cart_page_male.html'
+				}
+			
         })
     },
     fbLoginError: function(error) {
-        console.log('fbLoginError:' + JSON.stringify(error));
+        console.log('fbLoginError:' + error);
     }
 };

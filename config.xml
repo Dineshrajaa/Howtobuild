@@ -26,8 +26,8 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <plugin name="phonegap-facebook-plugin" spec="~0.12.0">
-        <param name="APP_ID" value="1047876051936088" />
-        <param name="APP_NAME" value="Price-Dev" />
+        <variable name="APP_ID" value="1047876051936088" />
+        <variable name="APP_NAME" value="Price-Dev" />
     </plugin>
-    <preference name="android-build-tool" value="gradle" />
+	<preference name="exit-on-suspend" value="false" />
 </widget>

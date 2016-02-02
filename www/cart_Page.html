@@ -4,8 +4,16 @@
 <head>
     <title>Cart Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="js/lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+	<script type="text/javascript" src="js/lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+	for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+	mixpanel.init("341fbe81b1dfcf9dc3865eb1cdc62d77");</script>
 </head>
 
 <body>
@@ -97,24 +105,22 @@
             </div>
             <div class="col-xs-2 column-width">
                 <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Menu_gray.png"></a>
-                    <ul class="dropdown-menu scrollable-menu-filter">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href='#'> <img src="./assets/img/Menu_gray.png"></a>
+                    <ul class="dropdown-menu scrollable-menu-filter" >
                         <li>
-                            <a href="#"></a>
+                            <a href="#" data-toggle="modal></a>
                             <p class="all-text">ALL</p>
                         </li>
+                        <li >
+                            <a href="#" ></a><img src="./assets/img/dress.png"  id="clothingimg"/></li>
                         <li>
-                            <a href="#"></a><img src="./assets/img/dress.png"></li>
+                            <a href="#"></a><img src="./assets/img/Watch-gray.png" id="perfectimg"></li>
                         <li>
-                            <a href="#"></a><img src="./assets/img/Watch-gray.png"></li>
+                            <a href="#"></a><img src="./assets/img/Glass-gray.png" id="sunglassimg"></li>
                         <li>
-                            <a href="#"></a><img src="./assets/img/sandal-gray.png"></li>
+                            <a href="#"></a><img src="./assets/img/ring-gray.png" id="necklaceimg"></li>
                         <li>
-                            <a href="#"></a><img src="./assets/img/Glass-gray.png"></li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/ring-gray.png"></li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/Bag-gray.png"></li>
+                            <a href="#"></a><img src="./assets/img/Bag-gray.png" id="purseimg"></li> </ul>
                 </div>
             </div>
             <div class="col-xs-2 column-width">
@@ -152,146 +158,58 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid off-white-bg">
+    <div class="container-fluid off-white-bg add-items">
         <div class="row ">
-            <div class="col-xs-6 right-padding pic">
-                <img src="./assets/img/bag.jpg" class="img-responsive items">
+            <div class="col-xs-6 right-padding ">
+                <img src="./assets/img/bag.jpg" class="img-responsive items ">
                 <p class="item-price">$1,350</p>
                 <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
                             <br> <span>DREW LEATHER BAG </span></p>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 left-padding pic">
+            <div class="col-xs-6 left-padding ">
                 <img src="./assets/img/bag.jpg" class="img-responsive items">
                 <p class="item-price">$1,350</p>
                 <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
-                            <br> <span>DREW LEATHER BAG </span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-xs-6 right-padding pic">
-                <img src="./assets/img/bag.jpg" class="img-responsive items">
-                <p class="item-price">$1,350</p>
-                <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
-                            <br> <span>DREW LEATHER BAG </span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 left-padding pic">
-                <img src="./assets/img/bag.jpg" class="img-responsive items">
-                <p class="item-price">$1,350</p>
-                <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
                             <br> <span>DREW LEATHER BAG </span></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-xs-6 right-padding pic">
+		      <div class="row ">
+            <div class="col-xs-6 right-padding ">
                 <img src="./assets/img/bag.jpg" class="img-responsive items">
                 <p class="item-price">$1,350</p>
                 <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
                             <br> <span>DREW LEATHER BAG </span></p>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 left-padding pic">
+            <div class="col-xs-6 left-padding ">
                 <img src="./assets/img/bag.jpg" class="img-responsive items">
                 <p class="item-price">$1,350</p>
                 <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
-                            <br> <span>DREW LEATHER BAG </span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row ">
-            <div class="col-xs-6 right-padding pic">
-                <img src="./assets/img/bag.jpg" class="img-responsive items">
-                <p class="item-price">$1,350</p>
-                <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
-                            <br> <span>DREW LEATHER BAG </span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 left-padding pic">
-                <img src="./assets/img/bag.jpg" class="img-responsive items">
-                <p class="item-price">$1,350</p>
-                <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
                             <br> <span>DREW LEATHER BAG </span></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row ">
-            <div class="col-xs-6 right-padding pic">
+		      <div class="row ">
+            <div class="col-xs-6 right-padding ">
                 <img src="./assets/img/bag.jpg" class="img-responsive items">
                 <p class="item-price">$1,350</p>
                 <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
-                            <br> <span>DREW LEATHER BAG </span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 left-padding pic">
-                <img src="./assets/img/bag.jpg" class="img-responsive items">
-                <p class="item-price">$1,350</p>
-                <div class="row border-outline">
-                    <div class="col-xs-12 ">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
-                            <br> <span>DREW LEATHER BAG </span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 right-padding pic">
-                <img src="./assets/img/bag.jpg" class="img-responsive items">
-                <p class="item-price">$1,350</p>
-                <div class="row border-outline">
-                    <div class="col-xs-12">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
-                            <br> <span>DREW LEATHER BAG </span></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-6 left-padding pic">
-                <img src="./assets/img/bag.jpg" class="img-responsive items">
-                <p class="item-price">$1,350</p>
-                <div class="row border-outline">
-                    <div class="col-xs-12 ">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
-                            <br> <span>DREW LEATHER BAG </span></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-6 right-padding pic">
-                <img src="./assets/img/bag.jpg" class="img-responsive items">
-                <p class="item-price">$1,350</p>
-                <div class="row border-outline">
-                    <div class="col-xs-12 ">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
                             <br> <span>DREW LEATHER BAG </span></p>
                     </div>
                 </div>
@@ -301,33 +219,122 @@
                 <p class="item-price">$1,350</p>
                 <div class="row border-outline">
                     <div class="col-xs-12 pic">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
+                            <br> <span>DREW LEATHER BAG </span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+		      <div class="row ">
+            <div class="col-xs-6 right-padding">
+                <img src="./assets/img/bag.jpg" class="img-responsive items">
+                <p class="item-price">$1,350</p>
+                <div class="row border-outline">
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
+                            <br> <span>DREW LEATHER BAG </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 left-padding ">
+                <img src="./assets/img/bag.jpg" class="img-responsive items">
+                <p class="item-price">$1,350</p>
+                <div class="row border-outline">
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
+                            <br> <span>DREW LEATHER BAG </span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+		      <div class="row ">
+            <div class="col-xs-6 right-padding ">
+                <img src="./assets/img/bag.jpg" class="img-responsive items">
+                <p class="item-price">$1,350</p>
+                <div class="row border-outline">
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
+                            <br> <span>DREW LEATHER BAG </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 left-padding">
+                <img src="./assets/img/bag.jpg" class="img-responsive items">
+                <p class="item-price">$1,350</p>
+                <div class="row border-outline">
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
                             <br> <span>DREW LEATHER BAG </span></p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-6 right-padding pic">
+            <div class="col-xs-6 right-padding">
                 <img src="./assets/img/bag.jpg" class="img-responsive items">
                 <p class="item-price">$1,350</p>
                 <div class="row border-outline">
-                    <div class="col-xs-12 ">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
                             <br> <span>DREW LEATHER BAG </span></p>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-6 left-padding pic">
+            <div class="col-xs-6 left-padding">
                 <img src="./assets/img/bag.jpg" class="img-responsive items">
                 <p class="item-price">$1,350</p>
                 <div class="row border-outline">
-                    <div class="col-xs-12 ">
-                        <p><img src="./assets/img/like.jpg">CHLO&Eacute
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
                             <br> <span>DREW LEATHER BAG </span></p>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 right-padding">
+                <img src="./assets/img/bag.jpg" class="img-responsive items">
+                <p class="item-price">$1,350</p>
+                <div class="row border-outline">
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
+                            <br> <span>DREW LEATHER BAG </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 left-padding">
+                <img src="./assets/img/bag.jpg" class="img-responsive items">
+                <p class="item-price">$1,350</p>
+                <div class="row border-outline">
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
+                            <br> <span>DREW LEATHER BAG </span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 right-padding ">
+                <img src="./assets/img/bag.jpg" class="img-responsive items">
+                <p class="item-price">$1,350</p>
+                <div class="row border-outline">
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
+                            <br> <span>DREW LEATHER BAG </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 left-padding">
+                <img src="./assets/img/bag.jpg" class="img-responsive items">
+                <p class="item-price">$1,350</p>
+                <div class="row border-outline">
+                    <div class="col-xs-12 pic">
+                        <p><img src="./assets/img/like.png">CHLO&Eacute
+                            <br> <span>DREW LEATHER BAG </span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <div class="row bottom-search-bg">
             <div class="col-xs-12">
@@ -365,11 +372,12 @@
                 </form>
             </div>
         </div>
-    </div>
-    <script type="text/javascript" src="js/lib/jquery/jquery.min.js"></script>
-    <script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/cart_Page.js"></script>
+   
+    
+    
+	<script type="text/javascript" src="js/cart_Page.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	
 </body>
 
 </html>
