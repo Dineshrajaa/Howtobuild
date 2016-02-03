@@ -20,7 +20,6 @@
         <allow-intent href="market:*" />
         <preference name="AndroidLaunchMode" value="singleTop" />
         <preference name="android-minSdkVersion" value="15" />
-        <preference name="android-build-tool" value="gradle" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

@@ -1,3 +1,35 @@
+/* for spinner */
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('http://i.stack.imgur.com/FhHRx.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .modal {
+    display: block;
+}
 
 /* common css */
 
@@ -1008,7 +1040,7 @@ box-shadow: 0px 0px 24px 4px rgba(0,0,0,0.75);
   font-weight:bold; padding: 8px 0; border-radius:15px;
 }
 
-.submit-button:hover, .choices-button:hover, .wishlist-btn:hover  {
+.submit-button:hover, .wishlist-btn:hover  {
   color:#fff; 
  }
 
@@ -1046,7 +1078,7 @@ box-shadow: 0px 0px 24px 4px rgba(0,0,0,0.75);
    bottom:-40px;
 }
 
-.carousel-inner img   {
+.product-pics img   {
   border-radius:10px;
 }
 
@@ -1064,19 +1096,6 @@ box-shadow: 0px 0px 24px 4px rgba(0,0,0,0.75);
   display:inline-block; font:9px Roboto; color:#363636;
   padding-left:10px
 }
-
-.choices-button  {
-  background-color:#acacac; 
-  padding: 2px 7px 3px; border-radius:2px;
-  color:#fff; font:15px Roboto;
-  font-weight:bold;
-  text-align:left;
-}
-
-.choices-button  img {
- float:right;
- margin-top:3px
- }
  
  .wishlist-btn  {
    background-color:#acacac; 
@@ -1096,8 +1115,9 @@ box-shadow: 0px 0px 24px 4px rgba(0,0,0,0.75);
     width: 100%;
     table-layout: fixed;
 	padding-left:15px;
-	padding-right:15px
+	padding-right:15px;
 	border:none;
+	margin-top:10px;
 }
 .full-width-tabs > ul.nav.nav-tabs > li {
     float: left;
@@ -1107,11 +1127,409 @@ box-shadow: 0px 0px 24px 4px rgba(0,0,0,0.75);
     text-align: center;
 }
 
-.nav-tabs > li.active > a   {
-  padding: 0 5px; 
-  color:#2f2f2f; 
- background-color:#f3f3f3; 
- border-top-left-radius:0; 
- border-top-right-radius:0;
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover  {
+  border:none;
+  background-color:#fff;
+  color:#464646;
+  font-weight:bold;
+  margin-top:1px
+}
+
+.nav-tabs > li > a:hover  {
+  background-color:#fff;
+  border:none;
 }
  
+.product-details {
+  font:10px Roboto;
+}
+
+.nav-tabs > li > a  {
+  color:#464646;
+}
+
+.nav > li > a  {
+  padding:10px 5px 0;
+}
+  
+.indicator  {
+  background-color:#acacac; display:inline-block; margin-top:5px;
+  width:100%; padding-left:15px;
+}
+
+.product-detail-top-margin  {
+  margin-top:40px; padding-left:10px; padding-right:15px;
+}
+
+.retail-text  {
+  font:10px Roboto; margin-left:5px;
+ }
+ 
+ .retail-price   {
+   font:17px Roboto; text-decoration:line-through; margin-top:-12px
+}
+
+.discounted-price  {
+  font:38px Roboto; font-weight:bold; color:#000; text-align:center; margin-top:-8px
+}
+
+.saved-text  {
+font:10px Roboto; text-align:right; margin-right:5px;
+}
+
+.saved-amount  {
+  font:17px Roboto; margin-top:-12px; text-align:right; margin-right:2px;
+}
+
+.image-slider-side-padding  {
+  padding-left:10px; padding-right:10px;
+}
+
+.image-slider-side-padding > .col-xs-12   {
+  margin-top:-5px;
+ }
+ 
+.product-details-top-margin  {
+  margin-top:25px;
+}
+
+.zero-right-padding  {
+  padding-right:0;
+}
+
+.product-rating-margin  {
+  display:inline-block; margin-top:-15px;margin-left:14px; 
+}
+
+.button-top-margin  {
+  margin-top:15px; margin-bottom:13px;
+}
+
+.btn-right-padding  {
+  padding-right:5px
+}
+
+.btn-left-padding  {
+  padding-left:5px
+}
+
+.btn-bottom-margin  {
+  margin-bottom:13px;
+}
+
+.indicate-for-detail  {
+  padding-left:10px; padding-right:10px;
+}
+
+.indicate-for-browse-similar  {
+padding-left:25px; padding-right:25px;
+}
+
+.indicate-for-review  { 
+padding-left:22px; padding-right:10px;
+}
+
+.indicate-for-return  {  
+   padding-left:14px; padding-right:10px;
+}
+
+.item-description  {
+  color:#393939; font:14px Roboto; 
+  padding-left:13px; padding-right:13px; 
+  margin-top:13px; font-weight:bold; 
+  line-height:17px;
+}
+
+.detail-dimension-width  {
+  width:90%; padding-left:25px;
+  padding-top:5px;
+  padding-bottom:20px;
+}
+
+.detail-dimension-width p   {
+  color:#464646;
+  font:13px Roboto;
+  font-weight:bold;
+  margin-bottom:-8px;
+ }
+ 
+ .detail-dimension-width h6   {
+  color:#464646;
+  font:12px Roboto;
+  margin-bottom:-7px;
+ }
+ 
+ .modal-content  {
+   border:3px solid #000;
+   border-radius:10px;
+   margin-top:53px;
+   margin-left:-7px;
+   width:82%;
+ }
+ 
+ .modal-body  {
+   padding: 0 0 10px 0;
+ }
+ 
+ .carousel-inner img  {
+   border-top-right-radius:10px;
+   border-top-left-radius:10px;
+ }
+ 
+ .discounted-price-in-pop-up  {
+  font:24px Roboto; font-weight:bold; color:#000; text-align:center; margin-top:-8px
+}
+
+.product-detail-top-margin-in-popup  {
+  margin-top:40px; padding-left:5px; padding-right:5px;
+}
+
+.retail-text-in-popup  {
+  font:10px Roboto; margin-left:5px;
+  margin-top:-10px;
+ }
+ 
+ .retail-price-in-popup   {
+   font:16px Roboto; text-decoration:line-through; margin-top:-12px
+}
+
+.discounted-price-in-popup  {
+  font:22px Roboto; font-weight:bold; color:#000; text-align:center; margin-top:-8px
+}
+
+.saved-text-in-popup  {
+font:10px Roboto; text-align:right;
+margin-top:-12px; margin-left:-6px;
+}
+
+.saved-amount-in-popup  {
+  font:16px Roboto; margin-top:-11px; text-align:right; margin-left:-21px;
+}
+
+.product-name-in-popup   {
+  color:#464646; font:16px Roboto; font-weight:bold;
+  padding-left:7px;
+  margin-bottom:2px;
+}
+
+.product-name-in-popup span  {
+  color:#464646; font:11px Roboto; font-weight:bold; margin-top:-10px;
+   padding-left:5px;
+}
+
+.product-rating-in-popup  {
+  display:inline-block; font:13px Roboto; font-weight: bold; color:#000; padding-left:7px;
+  vertical-align:-3px;
+}
+
+.product-rating-margin-in-popup  {
+  display:inline-block; margin-left:8px; 
+}
+
+.fav-button  {
+  background-color:#acacac; 
+  padding: 14px 0 15px; border-radius:2px;
+  
+}
+
+.back-arrow-button img, .add-product-cart img, .fav-button img   {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+ }
+.btn-side-padding-in-popup  {
+  padding-left:6px; padding-right:6px;
+  margin-bottom:9px;
+}
+
+.btn-right-padding-in-popup {
+  padding-right:3px
+}
+
+.btn-left-padding-in-popup  {
+  padding-left:3px;
+}
+
+.wishlist-btn-in-popup  {
+   background-color:#acacac; 
+  padding: 3px 0 4px; border-radius:2px;
+  color:#fff; font:13px Roboto;
+  font-weight:bold;
+  text-align:center;
+}
+
+.wishlist-btn-in-popup:hover  {
+  color:#fff;
+}
+
+.product-details-in-popup {
+  font:9px Roboto;
+}
+
+.product-details-in-popup > li > a  {
+  padding:10px 2px 0;
+}
+
+.indicate-for-detail-in-popup  {
+  padding-left:5px; padding-right:10px;
+}
+
+.indicate-for-browse-similar-in-popup  {
+padding-left:18px; padding-right:17px;
+}
+
+.indicate-for-review-in-popup  { 
+padding-left:14px; padding-right:10px;
+}
+
+.item-description-in-popup  {
+  color:#393939; font:12px Roboto; 
+  padding-left:7px; padding-right:6px; 
+  margin-top:13px;  
+  line-height:17px;
+}
+
+.detail-dimension-width-in-popup  {
+  padding:5px 0 15px 7px;
+  width:100%
+}
+
+.detail-dimension-width-in-popup p   {
+  color:#464646;
+  font:13px Roboto;
+  font-weight:bold;
+  margin-bottom:-8px;
+ }
+ 
+ .detail-dimension-width-in-popup h6   {
+  color:#464646;
+  font:12px Roboto;
+  margin-bottom:-8px;
+ }
+ 
+ .panel-default > .color-size-tab, .panel-default > .choice-tab {
+    background-color: #acacac;
+    border-radius: 2px;
+    margin-bottom: -20px;
+    padding: 2px 6px 0 5px;
+}
+  
+  .color-size-option, .choice {
+    color: #fff;
+    font: bold 14px Roboto;
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+.choice {
+    color: #fff;
+    font: bold 15px Roboto;
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+.color-size-option  img, .choice img {
+ float:right;
+ margin-top:3px
+ }
+ 
+ .panel-default>.panel-heading+.panel-collapse>.color-size-selection, .panel-default>.panel-heading+.panel-collapse>.choice-selection {
+  border-color:transparent;
+ }
+ 
+ .zero-side-margin  {
+   margin-left:0; margin-right:0;
+}
+ 
+ /* css for color-slider in menu */
+ 
+ .scrollable-menu-color  {
+   min-width:auto;
+  width:45px;
+  border-radius:6px !important;
+  border:1px solid #000 !important;
+  margin-top:6px;
+  background-color:#fff;
+  margin-left:-5px;
+  height:auto !important;
+  max-height:284px !important;
+  overflow-x: hidden;
+}
+
+@media only screen and (max-width: 780px) {
+  .scrollable-menu-color  {
+   min-width:auto;
+  width:45px ;
+  margin-left:-5px;
+  height:auto ;
+  max-height:284px ;
+  overflow-x: hidden;
+}
+}
+
+
+.scrollable-menu-color > li  {
+   margin:6px 7px 9px; padding:8px 0;
+   border:1px solid #acacac;
+}
+
+.all-color  {
+  font: bold 15px Roboto;
+  color:#000;
+  text-align:center;
+  border:none !important;
+  margin-bottom:-6px !important;
+  margin-top:-3px !important;
+}
+
+.pink-color  {
+  background-color:#FF69B4;
+}
+
+.purple-color  {
+  background-color:#800080;
+}
+
+.red-color  {
+  background-color:#FF0000;
+}
+
+.black-color  {
+  background-color:#000;
+}
+
+.yellow-color  {
+  background-color:#FF69B4;
+}
+
+.green-color  {
+  background-color:#32CD32;
+}
+
+.white-color  {
+  background-color:#fff;
+}
+
+.blue-color  {
+  background-color:#0000ff;
+}
+
+.orange-color  {
+  background-color:#FFA500;
+}
+
+.gray-color  {
+  background-color:#A9A9A9;
+}
+
+.brown-color  {
+  background-color:#835C3B;
+}
+
+.zero-left-padding  {
+  padding-left:0;
+}
+
+.pop-up-close-icon  {
+  float:right; margin-right:9px; margin-top:25px;
+ }

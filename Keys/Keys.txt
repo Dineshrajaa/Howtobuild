@@ -1,0 +1,33 @@
+keytool -genkey -v -keystore price-release-key.keystore -alias price -keyalg RSA -keysize 2048 -validity 10000
+
+Enter keystore password:  
+Re-enter new password: 
+They don't match. Try again
+Enter keystore password:  
+Re-enter new password: 
+What is your first and last name?
+  [Unknown]:  Dinesh Raja
+What is the name of your organizational unit?
+  [Unknown]:  Development
+What is the name of your organization?
+  [Unknown]:  Logic-Square
+What is the name of your City or Locality?
+  [Unknown]:  Coimbatore
+What is the name of your State or Province?
+  [Unknown]:  Tamilnadu
+What is the two-letter country code for this unit?
+  [Unknown]:  IN
+Is CN=Dinesh Raja, OU=Development, O=Logic-Square, L=Coimbatore, ST=Tamilnadu, C=IN correct?
+  [no]:  y
+
+Generating 1,024 bit DSA key pair and self-signed certificate (SHA1withDSA) with a validity of 90 days
+	for: CN=Dinesh Raja, OU=Development, O=Logic-Square, L=Coimbatore, ST=Tamilnadu, C=IN
+Enter key password for <mykey>
+	(RETURN if same as keystore password):  
+Re-enter new password: 
+[Storing price-release-key.keystore]
+
+
+keytool -exportcert -alias price -keystore price-release-key.keystore | openssl sha1 -binary | openssl base64
+
+Password:priceapp
