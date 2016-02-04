@@ -92,9 +92,11 @@ var loginMethods = {
         var authResponse = response.authResponse; // Save the authResponse
         loginMethods.getFacebookProfileInfo(authResponse).then(function(profileInfo) {
 		if(profileInfo.email)
+		{
+		console.log('oki')}
 		else
-		profileInfo.email='logic@logic.com'
-		//alert(JSON.stringify(profileInfo));
+		profileInfo.email='logic@logic.com';
+		alert(JSON.stringify(profileInfo));
             // Get the promise and save the response in LocalStorage
             loginMethods.setUserInfo({
                 authResponse: authResponse,
