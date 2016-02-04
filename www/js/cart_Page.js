@@ -29,7 +29,8 @@ $(document).ready(function() {
             dataType: "json",
             data: {
                 "category": cat,
-                page_no: 1
+                page_no: 1 ,
+				"show_by" :"10"
             },
             success: function(data) {
                 console.log('category sucees')
@@ -72,7 +73,8 @@ $(document).ready(function() {
             dataType: "json",
             data: {
                 "category": cat,
-                page_no: '1'
+                page_no: '1',
+				"show_by" :"10"
             },
             success: function(data) {
                 console.log('category sucees')
@@ -232,7 +234,8 @@ $(document).ready(function() {
             dataType: "json",
             data: {
                 "category": cat,
-                "page_no": '1'
+                "page_no": '1',
+				"show_by" :"10"
 
             },
             success: function(data) {
@@ -441,7 +444,8 @@ function loadmore() {
         dataType: "json",
         data: {
             "category": cat,
-            "page_no": page_no
+            "page_no": page_no,
+			"show_by" :"10"
 
         },
         success: function(data) {

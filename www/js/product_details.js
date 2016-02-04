@@ -65,7 +65,7 @@ if(parsedetails.price)
 {console.log('present')}
 else 
 parsedetails.price='21';
-url =parsedetails.photo_set[0].url_medium
+url =parsedetails.photo_set[0].url_large
 //alert(JSON.stringify(parsedetails.photo_set[1]))
 //alert(JSON.stringify(parsedetails.photo_set[2]))
 //alert(JSON.stringify(parsedetails.photo_set[3]))
