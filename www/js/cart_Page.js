@@ -16,7 +16,7 @@ $(document).ready(function() {
         //alert(cat)
         $.ajax({
             type: 'GET',
-            url: "http://ec2-54-92-251-163.compute-1.amazonaws.com/item/list/",
+            url: "http://staging12.getpriceapp.com/item/list/",
             beforeSend: function() {
                 console.log('ajax start');
                 $body.addClass("loading");
@@ -59,7 +59,7 @@ $(document).ready(function() {
             //alert(cat)
         $.ajax({
             type: 'GET',
-            url: "http://ec2-54-92-251-163.compute-1.amazonaws.com/item/list/",
+            url: "http://staging12.getpriceapp.com/item/list/",
             beforeSend: function() {
                 console.log('ajax start');
                 $body.addClass("loading");
@@ -216,7 +216,7 @@ $(document).ready(function() {
         }
         $.ajax({
             type: 'GET',
-            url: "http://ec2-54-146-175-249.compute-1.amazonaws.com/item/list",
+            url: "http://staging12.getpriceapp.com/item/list/",
             beforeSend: function() {
                 console.log('ajaxstart');
                 $body.addClass("loading");
@@ -425,7 +425,7 @@ function loadmore() {
     //alert(page_no);
     $.ajax({
         type: 'GET',
-        url: "http://ec2-54-146-175-249.compute-1.amazonaws.com/item/list",
+        url: "http://staging12.getpriceapp.com/item/list/",
         beforeSend: function() {
             console.log('ajaxstart');
             $body.addClass("loading");

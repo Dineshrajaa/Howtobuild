@@ -11,7 +11,7 @@ var pk =localStorage.getItem('productid')
   $body = $("body");
   $.ajax({
 	    type : 'GET',
-	    url: 'http://ec2-54-146-175-249.compute-1.amazonaws.com/item-details/'+pk+'/',
+	    url: 'http://staging12.getpriceapp.com/item-details/'+pk+'/',
 		beforeSend: function() { 
 		console.log('moni');
 		$body.addClass("loading"); 
@@ -65,7 +65,7 @@ if(parsedetails.price)
 {console.log('present')}
 else 
 parsedetails.price='21';
-//alert(JSON.stringify(parsedetails.photo_set[0]))
+url =parsedetails.photo_set[0].url_medium
 //alert(JSON.stringify(parsedetails.photo_set[1]))
 //alert(JSON.stringify(parsedetails.photo_set[2]))
 //alert(JSON.stringify(parsedetails.photo_set[3]))
@@ -79,7 +79,7 @@ $('#price_sold').text('$'+parsedetails.price_sold+'')
 $('#amount_saved').text('$'+parsedetails.amount_saved+'')
 $('.carousel-inner').html('');
 $('.carousel-inner').append('<div class="item active">\
-           <img src="./assets/img/bag.jpg"  class="img-responsive">\
+           <img src="'+url+'"  class="img-responsive">\
             </div>\
             <div class="item">\
             <img src="./assets/img/bag.jpg"  class="img-responsive">\
