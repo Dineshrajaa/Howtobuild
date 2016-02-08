@@ -160,6 +160,8 @@
                             <a href="#"></a><img src="./assets/img/headphone_black.png" id='gadgetimg'></li>
                         <li>
                             <a href="#"></a><img src="./assets/img/tent_black.png" id='cycleimg'></li>
+							<li>
+                            <a href="#"></a><img src="./assets/img/shoes_black.png" id='shoesimg'></li>
                     </ul>
                 </div>
             </div>
@@ -266,11 +268,12 @@
 					</div>
 				</div> -->
     </div>
-    <div class="modal">
+    <div class="moda1l">
         <!-- Place at bottom of page -->
     </div>
     <script type="text/javascript" src="js/cart_Page.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/disableback.js"></script>
     <script src="js/lib/jquery-ui/jquery-ui.js"></script>
     <script src="js/lib/jquery-touch/jquery.ui.touch-punch.min.js"></script>
     <script>
@@ -283,6 +286,9 @@
             orientation: "vertical"
         });
     });
+	
+	
+	
     </script>
 </body>
 <script>
@@ -298,9 +304,9 @@ $('#clickforcolor').click(function(e) {
         $("#colorSlider").show();
     }
 });
-$("#colorSlider").on("slidestop", function(event, ui) {
+/*$("#colorSlider").on("slidestop", function(event, ui) {
     console.log("ui.value:" + ui.value)
-    /*if (ui.value > 0 && ui.value < 10)
+    if (ui.value > 0 && ui.value < 10)
         $("#divColorName").text("Black");
     else if (ui.value > 10 && ui.value < 20)
         $("#divColorName").text("Grey");
@@ -323,8 +329,8 @@ $("#colorSlider").on("slidestop", function(event, ui) {
     else if (ui.value > 80 && ui.value < 99)
         $("#divColorName").text("Red");
     else if (ui.value == 0 || ui.value == 100)
-        $("#divColorName").text("All");*/
-});
+        $("#divColorName").text("All");
+});*/
 $("#openpickerlink").spectrum({
     color: "#dd3333",
     change: function(coloe) {
@@ -348,7 +354,7 @@ function settext(text) {
 <style type="text/css">
 .divCpicker {
     height: 350px;
-    position': 'absolute';
+    position: 'absolute';
  left: 0;
     top: 0;
     font-size: 10px;

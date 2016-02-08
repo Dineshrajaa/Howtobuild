@@ -144,7 +144,7 @@
             </div>
             <div class="col-xs-2 column-width">
                 <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Menu_gray.png"></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png"></a>
                     <ul class="dropdown-menu scrollable-menu-filter">
                         <li>
                             <a href="#"></a>
@@ -265,7 +265,7 @@
 					</div>
 				</div> -->
     </div>
-    <div class="modal">
+    <div class="modal1">
         <!-- Place at bottom of page -->
     </div>
     <script type="text/javascript" src="js/cart_Page.js"></script>
@@ -288,9 +288,19 @@ $('#clickforcolor').click(function(e) {
     }
 });
 
-$("#fColorSlider").on("slidestop", function(event, ui) {
+   $(document).ready(function() {
+        $("#fColorSlider").slider({
+            max: 100,
+            min: 0,
+            range: "min",
+            value: 0,
+            orientation: "vertical"
+        });
+    });
+
+/*$("#fColorSlider").on("slidestop", function(event, ui) {
     console.log("ui.value:" + ui.value)
-    /*if (ui.value > 0 && ui.value < 10)
+    if (ui.value > 0 && ui.value < 10)
         $("#divColorName").text("Black");
     else if (ui.value > 10 && ui.value < 20)
         $("#divColorName").text("Grey");
@@ -313,8 +323,8 @@ $("#fColorSlider").on("slidestop", function(event, ui) {
     else if (ui.value > 80 && ui.value < 99)
         $("#divColorName").text("Red");
     else if (ui.value == 0 || ui.value == 100)
-        $("#divColorName").text("All");*/
-});
+        $("#divColorName").text("All");
+});*/
 $("#openpickerlink").spectrum({
     color: "#dd3333",
     change: function(coloe) {

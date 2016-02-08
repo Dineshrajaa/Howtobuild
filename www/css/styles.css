@@ -1,11 +1,24 @@
-	/* for spinner */
-	/* Start by setting display:none to make this hidden.
-	   Then we position it in relation to the viewport window
-	   with position:fixed. Width, height, top and left speak
-	   for themselves. Background we set to 80% white with
-	   our animation centered, and no-repeating */
+	.i1 {
+	    height: 200px;
+	    width: 300px;
+	}
 	
-	.modal {
+	.product-pics img {
+	    border-radius: 10px;
+	    max-width: 100%;
+	    max-height: 100%;
+	    margin: auto;
+	    display: block;
+	}
+	
+	.img2 {
+	    max-width: 100%;
+	    max-height: 100%;
+	    margin: auto;
+	    display: block;
+	}
+	
+	.modal1 {
 	    display: none;
 	    position: fixed;
 	    z-index: 1000;
@@ -24,13 +37,8 @@
 	/* Anytime the body has the loading class, our
 	   modal element will be visible */
 	
-	body.loading .modal {
+	body.loading .modal1 {
 	    display: block;
-	}
-	
-	.slider-img {
-	    width: 100%;
-	    height: 100px !important;
 	}
 	/* common css */
 	
@@ -65,19 +73,8 @@
 	    position: relative;
 	    border-top-left-radius: 10px;
 	    border-top-right-radius: 10px;
-	    width: 100% width
-	}
-	
-	.i1 {
-	    height: 200px;
-	    width: 300px;
-	}
-	
-	.img2 {
-	    max-width: 100%;
-	    max-height: 100%;
-	    margin: auto;
-	    display: block;
+	    width: 100%;
+	    height: 130px;
 	}
 	
 	.item-price {
@@ -1079,15 +1076,11 @@
 	}
 	
 	.top-margin-indicators {
-	    bottom: -40px;
+	    bottom: -20px;
 	}
 	
 	.product-pics img {
 	    border-radius: 10px;
-	    max-width: 100%;
-	    max-height: 100%;
-	    margin: auto;
-	    display: block;
 	}
 	
 	.product-name {
@@ -1310,9 +1303,10 @@
 	    margin-bottom: -7px;
 	}
 	
+	/*
 	.modal-content {
 	    border: 3px solid #000;
-	    border-radius: 10px;
+	    border-radius: 3px;
 	    margin-top: 53px;
 	    margin-left: -7px;
 	    width: 82%;
@@ -1320,7 +1314,20 @@
 	
 	.modal-body {
 	    padding: 0 0 10px 0;
+	}*/
+
+	/*popup CSS*/
+	div.modal-dialog.modal-sm {
+		width: 75%;
+		margin: auto;
 	}
+
+	.modal-content {
+	    border: 3px solid #000;
+	    border-radius: 3px;
+	    margin: 53px auto 0px;
+	}
+
 	
 	.carousel-inner img {
 	    border-top-right-radius: 10px;
@@ -1336,9 +1343,9 @@
 	}
 	
 	.product-detail-top-margin-in-popup {
-	    margin-top: 40px;
-	    padding-left: 5px;
-	    padding-right: 5px;
+	    margin-top: 20px;
+	    padding-left: 10px;
+	    padding-right: 10px;
 	}
 	
 	.retail-text-in-popup {
@@ -1375,20 +1382,33 @@
 	    margin-left: -21px;
 	}
 	
-	.product-name-in-popup {
-	    color: #464646;
-	    font: 16px Roboto;
+	.buy-button-amazon {
+	    margin-top: 3px;
+	    margin-bottom: 6px;
+	    color: #fff;
+	    background-color: #000;
+	    font: 15px Roboto;
 	    font-weight: bold;
-	    padding-left: 7px;
-	    margin-bottom: 2px;
+	    padding: 7px 10px 8px 12px;
+	    border-radius: 8px;
+	    text-align: left;
 	}
 	
-	.product-name-in-popup span {
+	.buy-button-amazon:hover {
+	    color: #fff;
+	}
+	
+	.buy-button-amazon span {
+	    float: right;
+	}
+	
+	.product-name-in-popup {
 	    color: #464646;
-	    font: 11px Roboto;
+	    font: 15px Roboto;
 	    font-weight: bold;
-	    margin-top: -10px;
-	    padding-left: 5px;
+	    margin-top: 15px;
+	    margin-bottom: 2px;
+	    text-align: center;
 	}
 	
 	.product-rating-in-popup {
@@ -1624,40 +1644,21 @@
 	    padding-left: 0;
 	}
 	
+	/*
 	.pop-up-close-icon {
 	    float: right;
 	    margin-right: 9px;
 	    margin-top: 25px;
-	}
+	}*/
 	
 	.slider-img {
 	    width: 100%;
-	    height: 150px !important;
-	}
-	
-	.thumbnail {}
-	
-	.sp-darkness {
-	    /*background: -moz-linear-gradient(top, #ff0200 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
-    background: -ms-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
-    */
-	    background: -o-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
-	    background: -webkit-gradient(linear, left top, left bottom, from(#ff0000), color-stop(0.17, #ffff00), color-stop(0.33, #00ff00), color-stop(0.5, #00ffff), color-stop(0.67, #0000ff), color-stop(0.83, #ff00ff), to(#ff0000));
-	    background: -webkit-linear-gradient(top, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
-	    background: linear-gradient(to bottom, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%);
-	}
-	
-	.sp-darkness {
-	    position: absolute;
-	    top: 0;
-	    right: 0;
-	    bottom: 0;
-	    left: 0%;
-	    height: 100%;
+	    height: 160px !important;
 	}
 	/*Neheme Designs start*/
 	
-	#colorSlider.ui-widget-content,#fColorSlider.ui-widget-content {
+	#colorSlider.ui-widget-content,
+	#fColorSlider.ui-widget-content {
 	    position: relative;
 	    background: url(../assets/img/bar-color.png) no-repeat center top;
 	    background-size: cover;
@@ -1665,11 +1666,13 @@
 	    height: 370px;
 	}
 	
-	#colorSlider .ui-widget-header,#fColorSlider .ui-widget-header {
+	#colorSlider .ui-widget-header,
+	#fColorSlider .ui-widget-header {
 	    background: none;
 	}
 	
-	#colorSlider.ui-widget-content .ui-slider-handle,#fColorSlider.ui-widget-content .ui-slider-handle {
+	#colorSlider.ui-widget-content .ui-slider-handle,
+	#fColorSlider.ui-widget-content .ui-slider-handle {
 	    left: inherit;
 	    right: -24px;
 	    background: url(../assets/img/moving-arrow1.png) no-repeat right center;
@@ -1703,7 +1706,8 @@
 	}
 	
 	@media only screen and (max-width: 480px) {
-	    #colorSlider.ui-widget-content,#fColorSlider.ui-widget-content {
+	    #colorSlider.ui-widget-content,
+	    #fColorSlider.ui-widget-content {
 	        width: 35px;
 	        height: 320px;
 	    }

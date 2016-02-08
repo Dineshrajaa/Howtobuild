@@ -32,4 +32,5 @@
         <param name="APP_NAME" value="Price-Dev" />
     </plugin>
 	<preference name="exit-on-suspend" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
 </widget>

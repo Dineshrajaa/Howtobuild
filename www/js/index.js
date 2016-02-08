@@ -1,5 +1,31 @@
+//attach fastclick
+var s = document.createElement("script");
+s.type = "text/javascript";
+s.src = "js/lib/fastclick.js";
+$("head").append(s);
+$(function() {
+    Origami.fastclick.FastClick.attach(document.body);
+});
 
+//disable double tap
+(function($) {
+  var IS_IOS = /iphone|ipad/i.test(navigator.userAgent);
+  $.fn.nodoubletapzoom = function() {
+    if (IS_IOS)
+      $(this).bind('touchstart', function preventZoom(e) {
+        var t2 = e.timeStamp
+          , t1 = $(this).data('lastTouch') || t2
+          , dt = t2 - t1
+          , fingers = e.originalEvent.touches.length;
+        $(this).data('lastTouch', t2);
+        if (!dt || dt > 500 || fingers > 1) return; // not double-tap
 
+        e.preventDefault(); // double tap - prevent the zoom
+        // also synthesize click events we just swallowed up
+        $(this).trigger('click').trigger('click');
+      });
+  };
+})(jQuery);
 
 	var loginMethods = {
 		/*Landing page methods*/
@@ -91,11 +117,11 @@
 			var authResponse = response.authResponse; // Save the authResponse
 			loginMethods.getFacebookProfileInfo(authResponse).then(function(profileInfo) {
 			if(profileInfo.email)
-			{ var p= profileInfo.id+'@logic.com';
+			{ var p=profileInfo.id+'@logic.com';
 			console.log(p)}
 			else
 			{
-			profileInfo.email=profileInfo.id+'@logic.com';
+			profileInfo.email = profileInfo.id+'@logic.com';
 			console.log(profileInfo.email)}
 			
 			if(profileInfo.gender)
@@ -109,7 +135,7 @@
 			console.log('oki')}
 			else
 			{
-			profileInfo.gender='unknown';
+			profileInfo.location='unknown';
 			console.log(profileInfo.email)}
 			//alert(JSON.stringify(profileInfo));
 				// Get the promise and save the response in LocalStorage
