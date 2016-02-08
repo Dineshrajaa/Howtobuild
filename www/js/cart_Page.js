@@ -673,7 +673,7 @@
 			    else if (ui.value == 0 || ui.value == 100)
 			        colorRange = "All";
 
-			    callforcolorfilter(colorRange);
+			    //callforcolorfilter(colorRange);
 			});
 
 			function callforcolorfilter(color) {
