@@ -4,15 +4,19 @@
 <head>
     <title>Cart Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	
     <script type="text/javascript" src="js/lib/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/spectrum.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/odometer.css" />
+    <script src="js/lib/odometer.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/common.js"></script>
     <script type="text/javascript" src="js/spectrum.js"></script>
+	
     <script type="text/javascript">
     (function(e, b) {
         if (!b.__SV) {
@@ -58,116 +62,13 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row menu-black-bg">
-            <div class="col-xs-2 column-width">
+		    <div class="row menu-black-bg">
+							    <div class="col-xs-6">
+								    <img src="./assets/img/logo.png" class="app-logo-in-popup">
+								</div>
+		            <div class="col-xs-2">
                 <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Fav_white.png"></a>
-                    <ul class="dropdown-menu scrollable-menu-favourite">
-                        <div class="row favourite-dropdown-button-padding">
-                            <div class="col-xs-6 cart-btn-right-padding">
-                                <button class="btn btn-block delete" type="button"><img src="./assets/img/cross.png"></button>
-                            </div>
-                            <div class="col-xs-6 cart-btn-left-padding">
-                                <button class="btn btn-block add-to-cart" type="button"><img src="./assets/img/cart-dropdown.png"></button>
-                            </div>
-                        </div>
-                        <div class="row favourite-dropdown-button-padding">
-                            <img src="./assets/img/favourite-img.png" class="favourite-item">
-                            <div class="col-xs-6 cart-btn-right-padding">
-                                <button class="btn btn-block delete" type="button"><img src="./assets/img/cross.png"></button>
-                            </div>
-                            <div class="col-xs-6 cart-btn-left-padding">
-                                <button class="btn btn-block add-to-cart" type="button"><img src="./assets/img/cart-dropdown.png"></button>
-                            </div>
-                        </div>
-                        <div class="row favourite-dropdown-button-padding">
-                            <img src="./assets/img/favourite-img.png" class="favourite-item">
-                            <div class="col-xs-6 cart-btn-right-padding">
-                                <button class="btn btn-block delete" type="button"><img src="./assets/img/cross.png"></button>
-                            </div>
-                            <div class="col-xs-6 cart-btn-left-padding">
-                                <button class="btn btn-block add-to-cart" type="button"><img src="./assets/img/cart-dropdown.png"></button>
-                            </div>
-                        </div>
-                        <div class="row favourite-dropdown-button-padding">
-                            <img src="./assets/img/favourite-img.png" class="favourite-item">
-                            <div class="col-xs-6 cart-btn-right-padding">
-                                <button class="btn btn-block delete" type="button"><img src="./assets/img/cross.png"></button>
-                            </div>
-                            <div class="col-xs-6 cart-btn-left-padding">
-                                <button class="btn btn-block add-to-cart" type="button"><img src="./assets/img/cart-dropdown.png"></button>
-                            </div>
-                        </div>
-                </div>
-            </div>
-            <div class="col-xs-2 column-width">
-                <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Cart_white.png"></a>
-                    <ul class="dropdown-menu scrollable-menu-cart">
-                        <li>
-                            <a href="#"><img src="./assets/img/Closed.png" class="remove"></a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="item-price-dropdown"><img src="./assets/img/pic.png"> $850
-                                    <br/> <span class="item-name-dropdown">MIU MIU</span>
-                                    <br/> <span class="item-brand-dropdown">AMAZON</span></p>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><img src="./assets/img/Closed.png" class="remove"></a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="item-price-dropdown"><img src="./assets/img/pic.png"> $850
-                                    <br/> <span class="item-name-dropdown">MIU MIU</span>
-                                    <br/> <span class="item-brand-dropdown">AMAZON</span></p>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><img src="./assets/img/Closed.png" class="remove"></a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="item-price-dropdown"><img src="./assets/img/pic.png"> $850
-                                    <br/> <span class="item-name-dropdown">MIU MIU</span>
-                                    <br/> <span class="item-brand-dropdown">AMAZON</span></p>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <div class="button-drop-down-side-padding">
-                            <button class="btn btn-block" type="button"><img src="./assets/img/Cart.png"></button>
-                        </div>
-                </div>
-            </div>
-            <div class="col-xs-2 column-width">
-                <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png"></a>
-                    <ul class="dropdown-menu scrollable-menu-filter">
-                        <li>
-                            <a href="#"></a>
-                            <p class="all-text">ALL</p>
-                        </li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/dress.png" id="clothingimg" /></li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/Watch.png" id="perfectimg"></li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/Glass.png" id="sunglassimg"></li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/ring.png" id="necklaceimg"></li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/Bag.png" id="purseimg"></li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/sandal.png" id="sandleimg"></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xs-2 column-width">
-                <div class="dropdown">
-                    <a id="clickforcolor" class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Paint_white.png"></a>
+                    <a id="clickforcolor" class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Paint_white.png" class="pop-menu-color"></a>
                     <ul class="dropdown-menu scrollable-menu-filter colorpicker">
                         <div class="color-result" id="divColorName">All</div>
                         <div id="fColorSlider" style="display:none"></div>
@@ -205,38 +106,75 @@
                     </div> -->
                 </div>
             </div>
-            <div class="col-xs-2 column-width">
-                <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Profile_white.png"></a>
-                    <ul class="dropdown-menu scrollable-menu-profile">
-                        <li>
-                            <a href="#"></a><img src="./assets/img/size.png"></li>
+			    <div class="col-xs-2">
+				    <div class="dropdown">
+					    <a class="dropdown-toggle needsclick" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png" class="pop-menu-filter"></a>
+					         <ul class="dropdown-menu scrollable-menu-filter">
                         <li>
                             <a href="#"></a>
-                            <p>SIZES</p>
+                            <p class="all-text" id="alltext">ALL</p>
                         </li>
                         <li>
-                            <a href="#"></a><img src="./assets/img/cc-info.png"></li>
+                            <a href="#"></a><img src="./assets/img/dress.png" id="clothingimg" /></li>
                         <li>
-                            <a href="#"></a>
-                            <p>CC INFO</p>
-                        </li>
+                            <a href="#"></a><img src="./assets/img/Watch.png" id="perfectimg"></li>
                         <li>
-                            <a href="#"></a><img src="./assets/img/shipping.png"></li>
+                            <a href="#"></a><img src="./assets/img/Glass.png" id="sunglassimg"></li>
                         <li>
-                            <a href="#"></a>
-                            <p>SHIPPING</p>
-                        </li>
+                            <a href="#"></a><img src="./assets/img/ring.png" id="necklaceimg"></li>
                         <li>
-                            <a href="#"></a><img src="./assets/img/orders.png"></li>
+                            <a href="#"></a><img src="./assets/img/Bag.png" id="purseimg"></li>
                         <li>
-                            <a href="#"></a>
-                            <p>ORDERS</p>
-                        </li>
-                </div>
-            </div>
-        </div>
-    </div>
+                            <a href="#"></a><img src="./assets/img/sandal.png" id="sandleimg"></li>
+                    </ul>
+				    </div>		
+				</div>
+				
+				<div class="col-xs-2">
+				    <div class="dropdown">
+					    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Fav_white.png" class="pop-menu-favourite"></a>
+					        <ul class="dropdown-menu scrollable-menu-favourite">
+							    <div class="row favourite-dropdown-button-padding">
+								    <img src="./assets/img/favourite-img.png" class="favourite-item">
+							        <div class="col-xs-6 cart-btn-right-padding">
+										<button class="btn btn-block delete" type="button"><img src="./assets/img/cross.png"></button>
+								    </div>
+								    <div class="col-xs-6 cart-btn-left-padding">
+							            <button class="btn btn-block add-to-cart" type="button"><img src="./assets/img/cart-dropdown.png"></button>
+								    </div>
+							    </div>
+								<div class="row favourite-dropdown-button-padding">
+								    <img src="./assets/img/favourite-img.png" class="favourite-item">
+							        <div class="col-xs-6 cart-btn-right-padding">
+										<button class="btn btn-block delete" type="button"><img src="./assets/img/cross.png"></button>
+								    </div>
+								    <div class="col-xs-6 cart-btn-left-padding">
+							            <button class="btn btn-block add-to-cart" type="button"><img src="./assets/img/cart-dropdown.png"></button>
+								    </div>
+							    </div>
+								<div class="row favourite-dropdown-button-padding">
+								    <img src="./assets/img/favourite-img.png" class="favourite-item">
+							        <div class="col-xs-6 cart-btn-right-padding">
+										<button class="btn btn-block delete" type="button"><img src="./assets/img/cross.png"></button>
+								    </div>
+								    <div class="col-xs-6 cart-btn-left-padding">
+							            <button class="btn btn-block add-to-cart" type="button"><img src="./assets/img/cart-dropdown.png"></button>
+								    </div>
+							    </div>
+								
+								<div class="row favourite-dropdown-button-padding">
+								    <img src="./assets/img/favourite-img.png" class="favourite-item">
+							        <div class="col-xs-6 cart-btn-right-padding">
+										<button class="btn btn-block delete" type="button"><img src="./assets/img/cross.png"></button>
+								    </div>
+								    <div class="col-xs-6 cart-btn-left-padding">
+							            <button class="btn btn-block add-to-cart" type="button"><img src="./assets/img/cart-dropdown.png"></button>
+								    </div>
+							    </div>
+					</div>
+				</div>
+			</div>
+		</div>
     <div class="container-fluid off-white-bg">
         <div class=" add-items">
         </div>

@@ -13,6 +13,9 @@
 			    type = ''
 			    color = ''
 			    hasnext = false
+			        //to position popup(left/right)
+			    index = ''
+
 			    var userdata = loginMethods.getUserInfo();
 
 			    if (localStorage.getItem('backbuttonpressed') == 'true') {
@@ -28,7 +31,7 @@
 			        if (color) {
 			            console.log('localStorage.getItem()');
 			            //make ajax color based on color filter
-			            loadprofcolr();
+			            //loadprofcolr();
 			        } else
 			            console.log('lodng');
 			        //without color filter
@@ -96,20 +99,13 @@
 			        mixpanel.track("view_item_details", {
 			            "id": '123'
 			        });
-			        // $body.addClass("loading");
+
 			        console.log(e.target.id);
-			        /*localStorage.setItem('productid', ' ')
-			        localStorage.setItem('productcat', cat)
-			        localStorage.setItem('page', page_no)
-			        localStorage.setItem('type',userdata.fbGender)
-			        if(color)
-			        console.log('no filter')
-			        else
-			        localStorage.setItem('color',color)
-			        localStorage.setItem('productid', e.target.id)
+			        index = $(this).attr("alt");
 
+			        var var1 = jQuery(this).data('target');
+			        jQuery(var1).modal('show');
 
-			        window.location = 'product_Detail.html'*/
 
 			    });
 			    //preview event
@@ -145,12 +141,7 @@
 			        });
 
 			    });
-			    /*$(document).on('click', '.all-text', function() {
-					$(all-text).css({"color": '#d8d8d8'})
-					makeAjaxcall();
 
-				});
-*/
 			    //remove from cart 
 			    $(document).on('click', '.remove', function() {
 			        mixpanel.track("remove_from_cart", {
@@ -186,6 +177,7 @@
 			                $('#purseimg').attr('src', './assets/img/Bag.png');
 			                $('#sandleimg').attr('src', './assets/img/sandal.png');
 			                $('#perfectimg').attr('src', './assets/img/Watch.png');
+			                $('#alltext').attr('color', 'black');
 
 			            } else if (id == 'sunglassimg') {
 			                cat = 'sunglasses'
@@ -197,6 +189,7 @@
 			                $('#purseimg').attr('src', './assets/img/Bag.png');
 			                $('#sandleimg').attr('src', './assets/img/sandal.png');
 			                $('#perfectimg').attr('src', './assets/img/Watch.png');
+			                $('#alltext').attr('color', 'black');
 			            } else if (id == 'necklaceimg') {
 			                cat = 'jewelry'
 			                console.log(cat);
@@ -208,6 +201,7 @@
 			                $('#purseimg').attr('src', './assets/img/Bag.png');
 			                $('#sandleimg').attr('src', './assets/img/sandal.png');
 			                $('#perfectimg').attr('src', './assets/img/Watch.png');
+			                $('#alltext').attr('color', 'black');
 
 			            } else if (id == 'purseimg') {
 			                cat = 'bags'
@@ -219,6 +213,7 @@
 
 			                $('#sandleimg').attr('src', './assets/img/sandal.png');
 			                $('#perfectimg').attr('src', './assets/img/Watch.png');
+			                $('#alltext').attr('color', 'black');
 			            } else if (id == 'sandleimg') {
 			                cat = 'shoes'
 			                console.log(cat);
@@ -228,6 +223,20 @@
 			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
 			                $('#clothingimg').attr('src', './assets/img/dress.png');
 			                $('#perfectimg').attr('src', './assets/img/Watch.png');
+			                $('#alltext').attr('color', 'black');
+			            } else if (id == 'alltext') {
+			                cat = "";
+
+			                $('#alltext').attr('color', '#d8d8d8');
+			                $('#perfectimg').attr('src', './assets/img/Watch.png');
+			                $('#sandleimg').attr('src', './assets/img/sandal.png');
+			                $('#purseimg').attr('src', './assets/img/Bag.png');
+			                $('#necklaceimg').attr('src', './assets/img/ring.png');
+			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
+			                $('#clothingimg').attr('src', './assets/img/dress.png');
+
+
+
 			            } else {
 			                cat = "watches";
 			                console.log(cat);
@@ -237,6 +246,7 @@
 			                $('#necklaceimg').attr('src', './assets/img/ring.png');
 			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
 			                $('#clothingimg').attr('src', './assets/img/dress.png');
+			                $('#alltext').attr('color', 'black');
 
 			            }
 			        } else {
@@ -249,53 +259,76 @@
 			                $('#watchimg').attr('src', './assets/img/Watch_Black.png');
 			                $('#gadgetimg').attr('src', './assets/img/headphone_black.png');
 			                $('#cycleimg').attr('src', './assets/img/tent_black.png');
-			                $('#sunglassimg').attr('src', './assets/img/glass_black.png');
+			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
+			                $('#shoesimg').attr('src', './assets/img/shoes_black.png');
+			                $('#maleall').attr('color', 'black');
 			            } else if (id == 'watchimg') {
 			                cat = 'watches'
 			                console.log(cat);
-			                $('#watchimg').attr('src', './assets/img/Watch_gray.png');
+			                $('#watchimg').attr('src', './assets/img/watch_gray.png');
 			                $('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
-
+			                $('#shoesimg').attr('src', './assets/img/shoes_black.png');
 			                $('#gadgetimg').attr('src', './assets/img/headphone_black.png');
 			                $('#cycleimg').attr('src', './assets/img/tent_black.png');
-			                $('#sunglassimg').attr('src', './assets/img/glass_black.png');
+			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
+			                $('#maleall').attr('color', 'black');
 			            } else if (id == 'gadgetimg') {
 			                cat = 'electronics'
 			                console.log(cat);
+			                $('#shoesimg').attr('src', './assets/img/shoes_black.png');
 			                $('#gadgetimg').attr('src', './assets/img/headphone_gray.png');
 			                $('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
 			                $('#watchimg').attr('src', './assets/img/Watch_Black.png');
 			                $('#gadgetimg').attr('src', './assets/img/headphone_black.png');
 			                $('#cycleimg').attr('src', './assets/img/tent_black.png');
+			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
+			                $('#maleall').attr('color', 'black');
 
 			            } else if (id == 'cycleimg') {
 			                cat = 'outdoogear'
 			                console.log(cat);
+			                $('#shoesimg').attr('src', './assets/img/shoes_black.png');
 			                $('#cycleimg').attr('src', './assets/img/tent_gray.png');
 			                $('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
 			                $('#watchimg').attr('src', './assets/img/Watch_Black.png');
 			                $('#gadgetimg').attr('src', './assets/img/headphone_black.png');
 
-			                $('#sunglassimg').attr('src', './assets/img/glass_black.png');
+			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
+			                $('#maleall').attr('color', 'black');
 			            } else if (id == 'shoesimg') {
 			                cat = 'sneakers'
 			                console.log(cat);
-			                $('#cycleimg').attr('src', './assets/img/Shoes-gray.png');
+			                $('#shoesimg').attr('src', './assets/img/Shoes-gray.png');
 			                $('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
 			                $('#watchimg').attr('src', './assets/img/Watch_Black.png');
 			                $('#gadgetimg').attr('src', './assets/img/headphone_black.png');
+			                $('#cycleimg').attr('src', './assets/img/tent_black.png');
+			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
+			                $('#maleall').attr('color', 'black');
+			            } else if (id == 'maleall') {
 
-			                $('#sunglassimg').attr('src', './assets/img/glass_black.png');
-			            } else {
-			                cat = 'sunglasses';
-			                console.log(cat);
-			                $('#sunglassimg').attr('src', './assets/img/glass_gray.png');
+			                cat = "";
+			                $('#shoesimg').attr('src', './assets/img/shoes_black.png');
+			                $('#maleall').attr('color', '#d8d8d8');
+			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
 			                $('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
 			                $('#watchimg').attr('src', './assets/img/Watch_Black.png');
 			                $('#gadgetimg').attr('src', './assets/img/headphone_black.png');
 			                $('#cycleimg').attr('src', './assets/img/tent_black.png');
 
-			            }
+			            } else if (id == 'sunglassimg') {
+			                cat = 'sunglasses';
+			                console.log(cat);
+			                $('#maleall').attr('color', 'black');
+			                $('#sunglassimg').attr('src', './assets/img/Glass.png');
+			                $('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
+			                $('#watchimg').attr('src', './assets/img/Watch_Black.png');
+			                $('#gadgetimg').attr('src', './assets/img/headphone_black.png');
+			                $('#cycleimg').attr('src', './assets/img/tent_black.png');
+			                $('#shoesimg').attr('src', './assets/img/shoes_black.png');
+
+			            } else
+			                console.log('cat not found');
 
 
 
@@ -337,10 +370,18 @@
 
 			                if (parsedata[0].products.length) {
 			                    console.log('calling load prof from windows ');
-			                    loadprof()
+			                    loadprof("false")
 			                } else {
 			                    $('.add-items').html('');
-			                    $('.add-items').append('<p id="errormessage"><b>SORRY.. will be back soon </b></p>')
+			                    mwidth = $(window).width();
+			                    mheight = $('body').height()
+
+			                    //$('.add-items').css({"height":mheight });
+			                    //$('.add-items').css({"width":mwidth });
+			                    $('.add-items').append('<div class="jumbotron">\
+    <h1>No Data Available</h1> </div>')
+
+
 			                }
 
 			            },
@@ -360,9 +401,14 @@
 			    });
 			});
 
-			function loadprof() {
+			function loadprof(clear) {
 			    var parsedata = JSON.parse(localStorage.getItem('itemdata'));
 			    //  alert(JSON.stringify(parsedata));
+			    console.log(clear);
+			    if (clear == "true") {
+			        console.warn("Clearing product list");
+			        $('.add-items').html(' '); // if clear==true empty the products list(To avoid problems with Load more have used it)
+			    }
 			    if (categoryitemclicked) {
 			        $('.add-items').html(' ');
 			        categoryitemclicked = false;
@@ -372,6 +418,20 @@
 
 			        var img10, img11
 			        console.log("i:" + i);
+
+			        //price animation 
+			        if (parsedata[0].products[i].fields.price_sold != null && Math.floor(parsedata[0].products[i].fields.price_sold) != parsedata[0].products[i].fields.price_sold) { //console.log(parsedata[0].products[i].fields.price);
+			            //var substr = parsedata[0].products[i].fields.price.split('.');
+			            parsedata[0].products[i].fields.price_sold = Math.floor(parsedata[0].products[i].fields.price_sold)
+			        } else
+			            parsedata[0].products[i].fields.price_sold = 000
+
+
+			        if (parsedata[0].products[i + 1].fields.price_sold != null && Math.floor(parsedata[0].products[i + 1].fields.price_sold) != parsedata[0].products[i + 1].fields.price_sold) {
+			            //var substr = parsedata[0].products[i+1].fields.price.split('.');
+			            parsedata[0].products[i + 1].fields.price_sold = Math.floor(parsedata[0].products[i + 1].fields.price_sold)
+			        } else
+			            parsedata[0].products[i + 1].fields.price_sold = 000
 
 			        if (parsedata[0].products[i].fields.photo_set[0])
 			            img10 = parsedata[0].products[i].fields.photo_set[0].url_medium
@@ -395,57 +455,48 @@
 			            parsedata[0].products[i].fields.description = shorttext;
 			        }
 
-			        if (parsedata[0].products[i].fields.brand != null && parsedata[0].products[i].fields.brand.length > 10) {
-			            var shorttext = trimLong(parsedata[0].products[i].fields.brand);
-			            parsedata[0].products[i].fields.brand = shorttext;
-			        }
+
+
+
 			        if (parsedata[0].products[i].fields.brand != null && parsedata[0].products[i].fields.brand.length > 10) {
 			            var shorttext = trimLong(parsedata[0].products[i].fields.brand);
 			            parsedata[0].products[i].fields.brand = shorttext;
 			        }
 
-			        if (parsedata[0].products[i + 1].fields.description != null && parsedata[0].products[i + 1].fields.description.length > 10) {
+			        if (parsedata[0].products[i + 1].fields.description != null && parsedata[0].products[i + 1].fields.description.length > 15) {
 			            var shorttext = trimLong(parsedata[0].products[i].fields.description);
 			            parsedata[0].products[i + 1].fields.description = shorttext;
 			        }
+			        if (parsedata[0].products[i].fields.description != null && parsedata[0].products[i].fields.description.length > 15) {
+			            var shorttext = trimLong(parsedata[0].products[i].fields.description);
+			            parsedata[0].products[i].fields.description = shorttext;
+			        }
 
 			        if (parsedata[0].products[i + 1].fields.brand != null && parsedata[0].products[i + 1].fields.brand.length > 10) {
 			            var shorttext = trimLong(parsedata[0].products[i].fields.brand);
 			            parsedata[0].products[i + 1].fields.brand = shorttext;
 			        }
-			        if (parsedata[0].products[i + 1].fields.brand != null && parsedata[0].products[i + 1].fields.brand.length > 10) {
-			            var shorttext = trimLong(parsedata[0].products[i + 1].fields.brand);
-			            parsedata[0].products[i + 1].fields.brand = shorttext;
-			        }
+
 
 
 
 
 
 			        var v = i + 1
-			        if (parsedata[0].products[i].fields.price != null) {
-
-			        } else
-			            parsedata[0].products[i].fields.price = 'N/A'
+			            // if (parsedata[0].products[i].fields.price != null) {} else parsedata[0].products[i].fields.price = 'N/A'
 
 			        if (parsedata[0].products[i].fields.brand) {} else parsedata[0].products[i].fields.brand = 'N/A'
+			        if (parsedata[0].products[i + 1].fields.brand) {} else parsedata[0].products[i + 1].fields.brand = 'N/A'
+			        if (parsedata[0].products[i].fields.description) {} else parsedata[0].products[i].fields.description = 'N/A'
+			        if (parsedata[0].products[i + 1].fields.description) {} else parsedata[0].products[+1].fields.description = 'N/A'
 
-			        //if (parsedata[0].products[v].fields.brand!=null) {} else parsedata[i + 1].products[i + 1].fields.brand = 'N/A'
-
-			        if (parsedata[0].products[v].fields.price != null) {} else
-			            parsedata[0].products[v].fields.price = 'N/A'
-
-			        //if (parsedata[0].products[v].fields.description!=null) {} else
-			        //	parsedata[0].products[v].fields.description = 'N/A'
-			        if (parsedata[0].products[i].fields.description != null) {} else
-			            parsedata[0].products[i].fields.description = 'N/A'
 
 
 			        //modal code for loadpfrof
 			        $('.add-items').append('<div class="row ">\
 						<div class="col-xs-6 right-padding ">\
-							<img src="' + img10 + '" class="img-responsive items" id="' + parsedata[0].products[i].fields.id + '" data-toggle="modal" data-target="#myModal' + i + '">\
-							<p class="item-price">$' + parsedata[0].products[i].fields.price + '</p>' + getModalHTML(i, parsedata[0].products[i], img10) +
+							<img src="' + img10 + '" class="img-responsive items" id="' + parsedata[0].products[i].fields.id + '" alt=' + i + ' data-toggle="modal" data-target="#myModal' + i + '">\
+						<p class=""></p>' + getModalHTML(i, parsedata[0].products[i], img10) +
 			            '<div class="row border-outline">\
 								<div class="col-xs-12 pic" >\
 									<p ><img src="./assets/img/like.png">' + parsedata[0].products[i].fields.brand + '\
@@ -454,8 +505,8 @@
 							</div>\
 						</div>\
 						<div class="col-xs-6 left-padding ">\
-						<img src="' + img11 + '" class="img-responsive items" id="' + parsedata[0].products[i + 1].fields.id + '" data-toggle="modal" data-target="#myModal' + i + 1 + '">\
-							<p class="item-price">$' + parsedata[0].products[i + 1].fields.price + '</p>' + getModalHTML(i + "" + 1, parsedata[0].products[i + 1], img11) +
+						<img src="' + img11 + '" class="img-responsive items" id="' + parsedata[0].products[i + 1].fields.id + '"  alt=' + v + ' data-toggle="modal" data-target="#myModal' + i + 1 + '">\
+					<p class=""></p>' + getModalHTML(i + "" + 1, parsedata[0].products[i + 1], img11) +
 			            '<div class="row border-outline">\
 							<div class="row border-outline">\
 								<div class="col-xs-12 pic" >\
@@ -471,31 +522,31 @@
 
 
 			    }
-
-
-
 			}
 
+
 			function getModalHTML(uniqueId, product, imgUrl) {
+
 			    console.warn(product);
-			    return '<div class="modal fade" id="myModal' + uniqueId + '" role="dialog">\
+
+			    return '<div class="modal" id="myModal' + uniqueId + '" role="dialog">\
 						<div class="modal-dialog modal-sm">\
-                            <div class="modal-content">\
+                            <div class="modal-content  ">\
 							    <div class="modal-body">\
-							     	<img src="./assets/img/pop-up-close.png" class="pop-up-close-icon" onclick="$(\'#myModal' + uniqueId + '\').modal(\'hide\')">\
-                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">\
+							     	<img src="./assets/img/pop-up-close.png" class="pop-up-close-icon " onclick="$(\'#myModal' + uniqueId + '\').modal(\'hide\')">\
+                                    <div id="myCarousel' + uniqueId + '" class="carousel slide" data-ride="carousel">\
                                         <ol class="carousel-indicators top-margin-indicators">\
-                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>\
-                                            <li data-target="#myCarousel" data-slide-to="1"></li>\
-                                            <li data-target="#myCarousel" data-slide-to="2"></li>\
-                                            <li data-target="#myCarousel" data-slide-to="3"></li>\
+                                            <li data-target="#myCarousel' + uniqueId + '" data-slide-to="0" class="active"></li>\
+                                            <li data-target="#myCarousel' + uniqueId + '" data-slide-to="1"></li>\
+                                            <li data-target="#myCarousel' + uniqueId + '" data-slide-to="2"></li>\
+                                            <li data-target="#myCarousel' + uniqueId + '" data-slide-to="3"></li>\
                                         </ol>\
 \
                                         <div class="carousel-inner" role="listbox">\
 										    <div class="item active">\
 										        <div class="row">\
                                                     <div class="col-md-12" >\
-                                                        <a class="thumbnail" href="#"><img src="' + imgUrl + '" class="slider-img"></a>\
+                                                        <a class="thumbnail" href="#"><img src="' + imgUrl + '"  class="slider-img"></a>\
                                                     </div>\
 												</div>\
 											</div>\
@@ -534,8 +585,8 @@
 				                            <p class="retail-text-in-popup">RETAIL </p>\
 					                            <p class="retail-price-in-popup">$' + parseFloat(product.fields.price).toFixed(2) + '</p>\
 				                        </div>\
-				                        <div class="col-xs-6">\
-				                            <p class="discounted-price-in-pop-up">$' + parseFloat(product.fields.price_sold).toFixed(2) + '</p>\
+				                        <div class="col-xs-6 ">\
+				                            <p class="discounted-price-in-pop-up  odometer">$' + parseFloat(product.fields.price_sold).toFixed(2) + '</p>\
 				                        </div>\
 				                        <div class="col-xs-3"> \
 				                            <p class="saved-text-in-popup">SAVED </p>\
@@ -545,7 +596,7 @@
 									\
 									<div class="row" style="padding-right:10px; padding-left:10px">\
 			                            <div class="col-xs-12" >\
-										    <button onclick="showPurchasePage(this)" class="btn btn-block buy-button-amazon" data-purchaseurl="' + product.fields.purchase_url+ '" type="button">BUY <span>AMAZON.COM</span></button>\
+										    <button onclick="showPurchasePage(this)" class="btn btn-block buy-button-amazon" data-purchaseurl="' + product.fields.purchase_url + '" type="button">BUY <span>AMAZON.COM</span></button>\
 										</div>\
 			                        </div>\
 				\
@@ -557,29 +608,42 @@
 			}
 
 			function showPurchasePage(selectedProduct) {
-				var url=$(selectedProduct).data("purchaseurl");
-				console.log("url:"+url);
-			    if (url != "" || url !== null ) {
+			    var url = $(selectedProduct).data("purchaseurl");
+			    console.log("url:" + url);
+			    if (url != "" || url !== null) {
 			        console.log($(selectedProduct).data("purchaseurl"));
 			        var ref = cordova.InAppBrowser.open(url, '_blank', 'location=yes');
 			        ref.addEventListener('loadstart', function(event) {
 			            //console.log("loadstart" + event.url);
 			        });
+			        ref.addEventListener('loadstop', function(event) {
+			            //console.log("loadstart" + event.url);
+			            if ((event.url).indexOf('http://www.amazon.com/gp/buy/thankyou') === 0) {
+			            	setTimeout(function(){
+			            		ref.close(); // close inappbrowser 3seconds after purchase
+			            	},3000);
+			                
+			            }
+			        });
+			        
 
 			    }
 			}
 			//hide x before modal is shown
-			$(document).on('show.bs.modal', function(e) {
+			/*$(document).on('show.bs.modal', function(e) {
 			    $(e.target).find("img.pop-up-close-icon").hide();
-			});
+			});*/
 
 			//show x after modal is shown and then reposition it
 			//hack because bootstrap and variable device size
 			$(document).on('shown.bs.modal', function(e) {
+
 			    var modalBody = $(e.target).find(".modal-body");
+			    var modalContent = $(e.target).find(".modal-content");
 			    var imagex = $(e.target).find("img.pop-up-close-icon");
 			    var modalPosition = modalBody.position();
 			    console.warn(modalPosition);
+
 			    imagex.css({
 			        "position": "absolute",
 			        "left": function() {
@@ -589,7 +653,16 @@
 			            return (modalPosition.top) + "px"
 			        }
 			    });
+
 			    imagex.fadeIn("slow");
+
+			    console.log('setTimeout');
+			    /*	var odometer = $(e.target).find(".odometer");
+			    	setTimeout(function(){
+			        odometer.html(4567);
+			    }, 3000);*/
+			    //odometer.render();
+			    //odometer.render();
 			});
 
 			function loadmore() {
@@ -629,7 +702,8 @@
 			            localStorage.setItem('itemdata', getitemdata);
 			            var parsedata = JSON.parse(localStorage.getItem('itemdata'));
 			            console.log('calling load 537 windows ');
-			            loadprof();
+
+			            loadprof("false");
 			            console.log(JSON.stringify(parsedata[0].paginator))
 			            if (parsedata[0].paginator.has_next)
 			                hasnext = true;
@@ -673,7 +747,7 @@
 			    else if (ui.value == 0 || ui.value == 100)
 			        colorRange = "All";
 
-			    //callforcolorfilter(colorRange);
+			    callforcolorfilter(colorRange);
 			});
 
 			function callforcolorfilter(color) {
@@ -712,7 +786,8 @@
 			            localStorage.setItem('itemdata', getitemdata);
 			            var parsedata = JSON.parse(localStorage.getItem('itemdata'));
 			            console.log('calling load prof from windows ');
-			            loadprofcolr();
+			            //loadprofcolr();
+			            loadprof("true");
 
 			            if (parsedata[0].paginator.has_next)
 			                hasnext = true;
@@ -759,14 +834,15 @@
 			            //alert(parsedata[0].products.length);
 
 			            if (parsedata[0].products.length == 0) {
-			                $('.add-items').append('<p>..Sorry will be back soon ..</p>')
+			                $('.add-items').append('<div class="jumbotron">\
+    <h1>No Data Available</h1> </div>')
 			            } else {
 			                console.log('category 641 sucees')
 
 			                console.log(JSON.stringify(data));
 
 
-			                loadprof();
+			                loadprof("false");
 			            }
 			            console.log(JSON.stringify(parsedata[0].paginator))
 			            if (parsedata[0].paginator.has_next)
@@ -833,7 +909,7 @@
 			        $('.add-items').append('<div class="row ">\
 						<div class="col-xs-6 right-padding ">\
 						<img src="' + img10 + '" class="img-responsive items" id="' + parsedata[0].products[i].fields.id + '" data-toggle="modal" data-target="#myModal' + i + '">\
-							 <p class="item-price">$' + parsedata[0].products[i].fields.price + '</p>' + getModalHTML(i, parsedata[0].products[i], img10) + '<div class="row border-outline">\
+							<p class="item-price"></p>' + getModalHTML(i, parsedata[0].products[i], img10) + '<div class="row border-outline">\
 			            <div class="col-xs-12">\
 						    <p><img src="./assets/img/like.png">CHLO&Eacute <br> <span>DREW LEATHER BAG </span></p>\
 						</div>\
@@ -846,7 +922,7 @@
 						</div>\
 						<div class="col-xs-6 left-padding ">\
 						<img src="' + img11 + '" class="img-responsive items" id="' + parsedata[0].products[i + 1].fields.id + '" data-toggle="modal" data-target="#myModal' + i + 1 + '">\
-							<p class="item-price">$' + parsedata[0].products[i + 1].fields.price + '</p>' + getModalHTML(i + "" + 1, parsedata[0].products[i + 1], img11) + '<div class="row border-outline">\
+							<p class="item-price"></p>' + getModalHTML(i + "" + 1, parsedata[0].products[i + 1], img11) + '<div class="row border-outline">\
 			            <div class="col-xs-12">\
 						    <p><img src="./assets/img/like.png">CHLO&Eacute <br> <span>DREW LEATHER BAG </span></p>\
 						</div>\
@@ -866,7 +942,7 @@
 
 			function trimLong(text) {
 			    var shortText = jQuery.trim(text).substring(0, 10)
-			        .split(" ").slice(0, -1).join(" ");
+			        //.split(" ").slice(0, -1).join(" ");
 
 			    return shortText
 			}
