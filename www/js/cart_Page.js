@@ -92,18 +92,6 @@
 						}
 					});
 
-					 //disabling scroll for color pickr
-				/*	 $(document).on('click' ,'#colorDropdown' ,function(){
-					    if($(this).target.hasClass('open'))
-						 	{$('body').addClass('noscroll')
-							console.log('addclass')}
-					  else
-					  {$('body').removeClass('noscroll');
-					  console.log('removelass')
-					  }
-					 
-					 });
-					 */
 
 					//View Item Details event
 					$(document).on('click', '.items', function(e) {
@@ -160,7 +148,13 @@
 						});
 
 					});
+                     $(document).on('click', '.app-logo-in-popup', function() {
+					cat=""
+					 $('.add-items').html('');
+						makeAjaxcall() 
+				
 
+					});
 					//remove from cart 
 					$(document).on('click', '.remove', function() {
 						mixpanel.track("remove_from_cart", {
@@ -188,166 +182,54 @@
 						if (userdata.fbGender == 'female') {
 							type = 'female'
 							if (id == 'clothingimg') {
-								cat = 'clothing'
+								cat = 'clothing'  //req
 								console.log(cat);
-								$('#clothingimg').attr('src', './assets/img/dress-gray.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#necklaceimg').attr('src', './assets/img/ring.png');
-								$('#purseimg').attr('src', './assets/img/Bag.png');
-								$('#sandleimg').attr('src', './assets/img/sandal.png');
-								$('#perfectimg').attr('src', './assets/img/Watch.png');
-								$('#alltext').attr('color', 'black');
-
-							} else if (id == 'sunglassimg') {
-								cat = 'sunglasses'
-								console.log(cat);
-								$('#sunglassimg').attr('src', './assets/img/Glass-gray.png');
-								$('#clothingimg').attr('src', './assets/img/dress.png');
-
-								$('#necklaceimg').attr('src', './assets/img/ring.png');
-								$('#purseimg').attr('src', './assets/img/Bag.png');
-								$('#sandleimg').attr('src', './assets/img/sandal.png');
-								$('#perfectimg').attr('src', './assets/img/Watch.png');
-								$('#alltext').attr('color', 'black');
+						
 							} else if (id == 'necklaceimg') {
-								cat = 'jewelry'
-								console.log(cat);
-								$('#necklaceimg').attr('src', './assets/img/ring-gray.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#clothingimg').attr('src', './assets/img/dress.png');
-
-
-								$('#purseimg').attr('src', './assets/img/Bag.png');
-								$('#sandleimg').attr('src', './assets/img/sandal.png');
-								$('#perfectimg').attr('src', './assets/img/Watch.png');
-								$('#alltext').attr('color', 'black');
+								cat = 'accessories' //changed
+							
 
 							} else if (id == 'purseimg') {
-								cat = 'bags'
+								cat = 'bags' // req
 								console.log(cat);
-								$('#purseimg').attr('src', './assets/img/Bag-gray.png');
-								$('#necklaceimg').attr('src', './assets/img/ring.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#clothingimg').attr('src', './assets/img/dress.png');
-
-								$('#sandleimg').attr('src', './assets/img/sandal.png');
-								$('#perfectimg').attr('src', './assets/img/Watch.png');
-								$('#alltext').attr('color', 'black');
+							
 							} else if (id == 'sandleimg') {
-								cat = 'shoes'
+								cat = 'flowers'//change
 								console.log(cat);
-								$('#sandleimg').attr('src', './assets/img/sandal-gray.png');
-								$('#purseimg').attr('src', './assets/img/Bag.png');
-								$('#necklaceimg').attr('src', './assets/img/ring.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#clothingimg').attr('src', './assets/img/dress.png');
-								$('#perfectimg').attr('src', './assets/img/Watch.png');
-								$('#alltext').attr('color', 'black');
-							} else if (id == 'alltext') {
+							
+							} else  {
 								cat = "";
 
-								$('#alltext').attr('color', '#d8d8d8');
-								$('#perfectimg').attr('src', './assets/img/Watch.png');
-								$('#sandleimg').attr('src', './assets/img/sandal.png');
-								$('#purseimg').attr('src', './assets/img/Bag.png');
-								$('#necklaceimg').attr('src', './assets/img/ring.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#clothingimg').attr('src', './assets/img/dress.png');
+							
 
 
 
-							} else {
-								cat = "watches";
-								console.log(cat);
-								$('#perfectimg').attr('src', './assets/img/Watch-gray.png');
-								$('#sandleimg').attr('src', './assets/img/sandal.png');
-								$('#purseimg').attr('src', './assets/img/Bag.png');
-								$('#necklaceimg').attr('src', './assets/img/ring.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#clothingimg').attr('src', './assets/img/dress.png');
-								$('#alltext').attr('color', 'black');
-
-							}
+							} 
 						} else {
 							type = 'male'
 								//alert('else')
 							if (id == 'clothingimg') {
-								cat = 'clothing'
+								cat = 'fashion' //changed
 								console.log(cat);
-								$('#clothingimg').attr('src', './assets/img/Shirt_gray.png');
-								$('#watchimg').attr('src', './assets/img/Watch_Black.png');
-								$('#gadgetimg').attr('src', './assets/img/headphone_black.png');
-								$('#cycleimg').attr('src', './assets/img/tent_black.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#shoesimg').attr('src', './assets/img/shoes_black.png');
-								$('#maleall').attr('color', 'black');
+								
 							} else if (id == 'watchimg') {
-								cat = 'watches'
-								console.log(cat);
-								$('#watchimg').attr('src', './assets/img/watch_gray.png');
-								$('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
-								$('#shoesimg').attr('src', './assets/img/shoes_black.png');
-								$('#gadgetimg').attr('src', './assets/img/headphone_black.png');
-								$('#cycleimg').attr('src', './assets/img/tent_black.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#maleall').attr('color', 'black');
+								cat = 'flowers' //changed
+								console.log(cat); 
+								
 							} else if (id == 'gadgetimg') {
-								cat = 'electronics'
+								cat = 'electronics' //old
 								console.log(cat);
-								$('#shoesimg').attr('src', './assets/img/shoes_black.png');
-								$('#gadgetimg').attr('src', './assets/img/headphone_gray.png');
-								$('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
-								$('#watchimg').attr('src', './assets/img/Watch_Black.png');
-								$('#gadgetimg').attr('src', './assets/img/headphone_black.png');
-								$('#cycleimg').attr('src', './assets/img/tent_black.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#maleall').attr('color', 'black');
+							
 
 							} else if (id == 'cycleimg') {
-								cat = 'outdoogear'
+								cat = 'outdoogear' //old
 								console.log(cat);
-								$('#shoesimg').attr('src', './assets/img/shoes_black.png');
-								$('#cycleimg').attr('src', './assets/img/tent_gray.png');
-								$('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
-								$('#watchimg').attr('src', './assets/img/Watch_Black.png');
-								$('#gadgetimg').attr('src', './assets/img/headphone_black.png');
+								
+							} else {
 
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#maleall').attr('color', 'black');
-							} else if (id == 'shoesimg') {
-								cat = 'sneakers'
-								console.log(cat);
-								$('#shoesimg').attr('src', './assets/img/Shoes-gray.png');
-								$('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
-								$('#watchimg').attr('src', './assets/img/Watch_Black.png');
-								$('#gadgetimg').attr('src', './assets/img/headphone_black.png');
-								$('#cycleimg').attr('src', './assets/img/tent_black.png');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#maleall').attr('color', 'black');
-							} else if (id == 'maleall') {
-
-								cat = "";
-								$('#shoesimg').attr('src', './assets/img/shoes_black.png');
-								$('#maleall').attr('color', '#d8d8d8');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
-								$('#watchimg').attr('src', './assets/img/Watch_Black.png');
-								$('#gadgetimg').attr('src', './assets/img/headphone_black.png');
-								$('#cycleimg').attr('src', './assets/img/tent_black.png');
-
-							} else if (id == 'sunglassimg') {
-								cat = 'sunglasses';
-								console.log(cat);
-								$('#maleall').attr('color', 'black');
-								$('#sunglassimg').attr('src', './assets/img/Glass.png');
-								$('#clothingimg').attr('src', './assets/img/Shirt_Black.png');
-								$('#watchimg').attr('src', './assets/img/Watch_Black.png');
-								$('#gadgetimg').attr('src', './assets/img/headphone_black.png');
-								$('#cycleimg').attr('src', './assets/img/tent_black.png');
-								$('#shoesimg').attr('src', './assets/img/shoes_black.png');
-
-							} else
-								console.log('cat not found');
+								cat = ""; //old
+						
+							} 
 
 
 
@@ -418,6 +300,66 @@
 
 
 					});
+					
+					//add to fav on click of like button 
+					//moni
+					
+					$(document).on('click','.like', function(e){
+					console.log('inside like');
+							 var proid = parseInt(e.target.id)
+							  $.ajax({
+					url: "http://staging12.getpriceapp.com/favourites/add",
+					data: {'item' : proid, 'user': localStorage.getItem('tokenid')},
+					type: "POST",
+					dataType: "json",
+					success: function(response) {
+					  console.log("Successss");
+					  console.log(response);
+					  console.log(JSON.stringify(response));
+					  console.log(proid);
+					  var srcimg = $("#"+proid).attr('src')
+					  console.log(srcimg);
+					  var removefavid = response.pk
+					  $('.scrollable-menu-favourite').append('<div class="row favourite-dropdown-button-padding" id="'+removefavid+'div">\
+								    <img src="'+srcimg+'" class="favourite-item" >\
+							        <div class="col-xs-6 cart-btn-right-padding">\
+										<button class="btn btn-block delete" type="button" class="removefav" ><img src="./assets/img/cross.png" id="'+removefavid+'cross"></button>\
+								    </div>\
+								   </div>'); 
+					  
+					  
+					},
+					error: function() {
+					  console.log("No JSON data returned");
+					}
+				  });
+					  
+					
+					});
+					
+					//removefromfav
+						$(".dropdown-menu").on("click", "img", function(e) {
+					         console.log(e.target.id);
+					        
+					    var pkid= parseInt(e.target.id)
+							 console.log(pkid);	
+						$.ajax({
+						url: "http://staging12.getpriceapp.com/favourites/delete",
+						data: {'id' : pkid },
+						type: "POST",
+						dataType: "json",
+						success: function() {
+						  console.log("Successss");
+						  var rmdivid= pkid+'div'
+						  $("#"+rmdivid).remove();
+						},
+						error: function() {
+						  console.log("No JSON data returned");
+						}
+					  });
+								
+					
+					});
 				});
 
 				function getProductDetails(productId) {
@@ -428,6 +370,12 @@
 				function setSelectedProduct(selectedPro) {
 					var selectedProId = $(selectedPro).attr("id");
 					var carId=$(selectedPro).data("carid");
+					// Stop Auto carousel
+					$("#"+carId).carousel(0);
+							$("#"+carId).carousel('pause')
+							$("#"+carId).carousel({
+        							interval: false
+    						});
 					$.ajax({
 						type: 'GET',
 						url: 'http://staging12.getpriceapp.com/item-details/' + selectedProId + '/',
@@ -467,32 +415,32 @@
 								}
 								else if(plength==4)
 								{
-								 imageArray[0] =productImages[0].url_small
-								 imageArray[1] =productImages[1].url_small
-								 imageArray[2] =productImages[2].url_small
-								 imageArray[3] =productImages[3].url_small
-								 imageArray[4] =productImages[1].url_small
+								 imageArray[0] =productImages[0].url_medium
+								 imageArray[1] =productImages[1].url_medium
+								 imageArray[2] =productImages[2].url_medium
+								 imageArray[3] =productImages[3].url_medium
+								 imageArray[4] =productImages[1].url_medium
 								
 								}else if(plength==3){
-								 imageArray[0] =productImages[0].url_small
-								 imageArray[1] =productImages[1].url_small
-								 imageArray[2] =productImages[2].url_small
-								 imageArray[3] =productImages[0].url_small
-								 imageArray[4] =productImages[1].url_small
+								 imageArray[0] =productImages[0].url_medium
+								 imageArray[1] =productImages[1].url_medium
+								 imageArray[2] =productImages[2].url_medium
+								 imageArray[3] =productImages[0].url_medium
+								 imageArray[4] =productImages[1].url_medium
 								}
 								else if(plength==2){
-								 imageArray[0] =productImages[0].url_small
-								 imageArray[1] =productImages[1].url_small
-								 imageArray[2] =productImages[0].url_small
-								 imageArray[3] =productImages[1].url_small
-								 imageArray[4] =productImages[0].url_small
+								 imageArray[0] =productImages[0].url_medium
+								 imageArray[1] =productImages[1].url_medium
+								 imageArray[2] =productImages[0].url_medium
+								 imageArray[3] =productImages[1].url_medium
+								 imageArray[4] =productImages[0].url_medium
 								}
 								else if(plength==1){
-								 imageArray[0] =productImages[0].url_small
-								 imageArray[1] =productImages[0].url_small
-								 imageArray[2] =productImages[0].url_small
-								 imageArray[3] =productImages[0].url_small
-								 imageArray[4] =productImages[0].url_small
+								 imageArray[0] =productImages[0].url_medium
+								 imageArray[1] =productImages[0].url_medium
+								 imageArray[2] =productImages[0].url_medium
+								 imageArray[3] =productImages[0].url_medium
+								 imageArray[4] =productImages[0].url_medium
 								}
 								else {
 								 imageArray[0] ="./assets/img/no_img.png"
@@ -576,8 +524,8 @@
 							//var substr = parsedata[0].products[i+1].fields.price.split('.');
 							parsedata[0].products[i + 1].fields.price_sold = Math.floor(parsedata[0].products[i + 1].fields.price_sold)
 						} else
-							parsedata[0].products[i + 1].fields.price_sold = 000
-*/
+							parsedata[0].products[i + 1].fields.price_sold = 000 */
+
 							 console.log(parsedata[0].products[i].fields.id)
 						if (parsedata[0].products[i].fields.photo_set.length)
 							img10 = parsedata[0].products[i].fields.photo_set[0].url_medium
@@ -586,16 +534,19 @@
 							console.log(parsedata[0].products[i].fields.id)
 							img10 = "./assets/img/no_img.png"
 						}
-						console.log(parsedata[0].products[i + 1].fields.id)
-						if (parsedata[0].products[i + 1].fields.photo_set.length)
+						 v=i+1
+						//console.log(parsedata[0].products[i + 1].fields.id)
+						if(parsedata[0].products[v])
+						{
+						if (parsedata[0].products[v].fields.photo_set.length)
 							img11 = parsedata[0].products[i + 1].fields.photo_set[0].url_medium
 						else {
 							console.log('else')
-							console.log(parsedata[0].products[i + 1].fields.id)
+							console.log(parsedata[0].products[v].fields.id)
 							img11 = "./assets/img/no_img.png";
 
 						}
-
+}
 						//checking for long text
 						if (parsedata[0].products[i].fields.description != null && parsedata[0].products[i].fields.description.length > 10) {
 							var shorttext = trimLong(parsedata[0].products[i].fields.description);
@@ -609,22 +560,24 @@
 							var shorttext = trimLong(parsedata[0].products[i].fields.brand);
 							parsedata[0].products[i].fields.brand = shorttext;
 						}
-
+                        if(parsedata[0].products[v]){
 						if (parsedata[0].products[i + 1].fields.description != null && parsedata[0].products[i + 1].fields.description.length > 15) {
 							var shorttext = trimLong(parsedata[0].products[i].fields.description);
 							parsedata[0].products[i + 1].fields.description = shorttext;
+						}
 						}
 						if (parsedata[0].products[i].fields.description != null && parsedata[0].products[i].fields.description.length > 15) {
 							var shorttext = trimLong(parsedata[0].products[i].fields.description);
 							parsedata[0].products[i].fields.description = shorttext;
 						}
-
+                        if(parsedata[0].products[v])
+						{
 						if (parsedata[0].products[i + 1].fields.brand != null && parsedata[0].products[i + 1].fields.brand.length > 10) {
 							var shorttext = trimLong(parsedata[0].products[i].fields.brand);
 							parsedata[0].products[i + 1].fields.brand = shorttext;
 						}
 
-
+}
 
 
 
@@ -646,8 +599,8 @@
 							<p class=""></p>' + getModalHTML(i, parsedata[0].products[i], img10) +
 							'<div class="row border-outline">\
 									<div class="col-xs-12 pic" >\
-										<p ><img src="./assets/img/like.png">' + parsedata[0].products[i].fields.brand + '\
-											<br> <span>' + parsedata[0].products[i].fields.description + '</span></p>\
+										<p ><img src="./assets/img/like.png"  class="like" id="' + parsedata[0].products[i].fields.id + 'like">' + parsedata[0].products[i].fields.brand + '\
+											<br> <span>' + parsedata[0].products[i].fields.price + '</span></p>\
 									</div>\
 								</div>\
 							</div>\
@@ -657,8 +610,8 @@
 							'<div class="row border-outline">\
 								<div class="row border-outline">\
 									<div class="col-xs-12 pic" >\
-										<p ><img src="./assets/img/like.png">' + parsedata[0].products[i + 1].fields.brand + '\
-											<br> <span>' + parsedata[0].products[i + 1].fields.description + '</span></p>\
+										<p ><img src="./assets/img/like.png" class="like" id="' + parsedata[0].products[i+1].fields.id + 'like" >' + parsedata[0].products[i + 1].fields.brand + '\
+											<br> <span >' + parsedata[0].products[i + 1].fields.price + '</span></p>\
 									</div>\
 								</div>\
 							</div>\
@@ -779,12 +732,16 @@
 						console.log($(selectedProduct).data("purchaseurl"));
 						var browserOptions = {
 							// Inappbrowser options for customization
+							toolbar: {
+        						height: 44,
+        						color: '#000000'
+    						},
 							title: {
-								//color: '#003264ff',
+								color: '#ffffff',
 								staticText: 'Price'
 							},
 							closeButton: {
-								wwwImage: 'img/back.jpg',
+								wwwImage: 'img/back.png',
 								imagePressed: 'close_pressed',
 								align: 'left',
 								event: 'closePressed'
@@ -857,18 +814,18 @@
 					var imagex = $(e.target).find("img.pop-up-close-icon");
 					var modalPosition = modalBody.position();
 					console.warn(modalPosition);
-
+					$('.carousel-inner .item:first').addClass('active');
 					imagex.css({
 						"position": "absolute",
 						"left": function() {
 							if($(e.target).parent().hasClass('left-padding')) {
-							return (35 + modalPosition.left + modalBody.width()) + "px"
+							return (55 + modalPosition.left + modalBody.width()) + "px"
 							} else {
-								return (modalPosition.left - 35) + "px"
+								return (modalPosition.left - 55) + "px"
 							}
 						},
 						"top": function() {
-							return (modalPosition.top) + "px"
+							return (modalPosition.top +20) + "px"
 						}
 					});
 
@@ -881,9 +838,9 @@
 					var modalc = $(e.target).find(".carousel");
 					var hammerobj = new Hammer(modalc[0]);
 					modalc.carousel({
-				      interval: 3000
+				      interval: false
 				  });
-					modalc.carousel('cycle');
+					modalc.carousel('pause');
 
 					hammerobj.on('swipeleft', function(e){
 						console.log("touch left");
@@ -1131,14 +1088,14 @@
 						var img10, img11
 						console.log("i:" + i);
 
-						if (parsedata[0].products[i].fields.photo_set[0])
+						if (parsedata[0].products[i].fields.photo_set.length)
 							img10 = parsedata[0].products[i].fields.photo_set[0].url_medium
 						else {
 							console.log('else')
 							console.log(parsedata[0].products[i].fields.id)
 							img10 = "./assets/img/no_img.png"
 						}
-						if (parsedata[0].products[i + 1].fields.photo_set[0])
+						if (parsedata[0].products[i + 1].fields.photo_set.length)
 							img11 = parsedata[0].products[i + 1].fields.photo_set[0].url_medium
 						else {
 							console.log('else')

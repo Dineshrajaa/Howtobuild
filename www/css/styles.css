@@ -1,6 +1,25 @@
+		
+	@font-face {
+    font-family: 'Avenir Next Bold';
+    src: url('AvenirNextCondensed-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Avenir Next Demibold';
+    src: url('AvenirNextCondensed-DemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Avenir Next Medium';
+    src: url('AvenirNextCondensed-Medium.ttf') format('truetype');
+}	
+		
 		/* for carousel images */
 
 
+		.modal-backdrop.in {
+		   opacity: 0.8;
+		}
 
 	.slider-img  {
 		  width: 100%;
@@ -119,12 +138,13 @@
 		}
 		
 		.border-outline span {
-			font-size: 8px;
+			text-decoration: line-through;
+			font-size: 15px;
+			font-weight: bold;
 			text-align: right;
 			vertical-align: 10px;
 			margin-right: 5px;
 		}
-		
 		.right-padding {
 			margin-top: 10px;
 			padding-right: 3px;
@@ -1761,10 +1781,3 @@
 		margin-top: 65px;
 	}
 		
-/*no scroll*/
-body.noscroll
-{
-    position: fixed; 
-    overflow-y: scroll;
-    width: 100%;
-}
