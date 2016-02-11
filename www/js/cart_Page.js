@@ -92,6 +92,18 @@
 						}
 					});
 
+					 //disabling scroll for color pickr
+				/*	 $(document).on('click' ,'#colorDropdown' ,function(){
+					    if($(this).target.hasClass('open'))
+						 	{$('body').addClass('noscroll')
+							console.log('addclass')}
+					  else
+					  {$('body').removeClass('noscroll');
+					  console.log('removelass')
+					  }
+					 
+					 });
+					 */
 
 					//View Item Details event
 					$(document).on('click', '.items', function(e) {
@@ -135,7 +147,14 @@
 
 					});
 					//add to cart 
-					$(document).on('click', '.add-to-cart', function() {
+					$(document).on('click', '.app-logo-in-popup', function() {
+					cat=""
+					 $('.add-items').html('');
+						makeAjaxcall() 
+				
+
+					});
+                       $(document).on('click', '.add-to-cart', function() {
 						mixpanel.track("add_to_cart", {
 							"id": '12345'
 						});
@@ -546,7 +565,7 @@
 						console.log("i:" + i);
 
 						//price animation 
-						if (parsedata[0].products[i].fields.price_sold != null && Math.floor(parsedata[0].products[i].fields.price_sold) != parsedata[0].products[i].fields.price_sold) { //console.log(parsedata[0].products[i].fields.price);
+					/*	if (parsedata[0].products[i].fields.price_sold != null && Math.floor(parsedata[0].products[i].fields.price_sold) != parsedata[0].products[i].fields.price_sold) { //console.log(parsedata[0].products[i].fields.price);
 							//var substr = parsedata[0].products[i].fields.price.split('.');
 							parsedata[0].products[i].fields.price_sold = Math.floor(parsedata[0].products[i].fields.price_sold)
 						} else
@@ -558,7 +577,7 @@
 							parsedata[0].products[i + 1].fields.price_sold = Math.floor(parsedata[0].products[i + 1].fields.price_sold)
 						} else
 							parsedata[0].products[i + 1].fields.price_sold = 000
-
+*/
 							 console.log(parsedata[0].products[i].fields.id)
 						if (parsedata[0].products[i].fields.photo_set.length)
 							img10 = parsedata[0].products[i].fields.photo_set[0].url_medium
@@ -765,7 +784,7 @@
 								staticText: 'Price'
 							},
 							closeButton: {
-								wwwImage: 'img/back.png',
+								wwwImage: 'img/back.jpg',
 								imagePressed: 'close_pressed',
 								align: 'left',
 								event: 'closePressed'

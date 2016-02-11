@@ -68,7 +68,7 @@
 								    <img src="./assets/img/logo.png" class="app-logo-in-popup">
 								</div>
 		            <div class="col-xs-2">
-                <div class="dropdown">
+                <div class="dropdown" id="colorDropdown">
                     <a id="clickforcolor" class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Paint_white.png" class="pop-menu-color"></a>
                     <ul class="dropdown-menu scrollable-menu-filter colorpicker">
                         <div class="color-result" id="divColorName">All</div>
@@ -215,16 +215,17 @@
 </body>
 <script>
 $('#clickforcolor').click(function(e) {
-    //alert(document.getElementById("divColorPicker").style.display)
-    /*if (document.getElementById("divColorPicker").style.display == "")
-        document.getElementById("divColorPicker").style.display = "none";
-    else
-        document.getElementById("divColorPicker").style.display = "";*/
+     
+
     if ($("#fColorSlider").is(':visible'))
-        $("#fColorSlider").hide();
-    else {
+	{   
+	   $("#fColorSlider").hide();
+		
+		}
+    else
+
         $("#fColorSlider").show();
-    }
+	
 });
 
    $(document).ready(function() {

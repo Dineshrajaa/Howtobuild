@@ -1761,3 +1761,10 @@
 		margin-top: 65px;
 	}
 		
+/*no scroll*/
+body.noscroll
+{
+    position: fixed; 
+    overflow-y: scroll;
+    width: 100%;
+}

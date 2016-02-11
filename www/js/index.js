@@ -74,7 +74,7 @@ $(function() {
 							console.log('profile info fail', fail);
 						})
 					} else {  
-					alert("You have already Logged in");
+					//alert("You have already Logged in");
 					 var userdata = loginMethods.getUserInfo();
 					 
 					if(userdata.fbGender == 'female')
