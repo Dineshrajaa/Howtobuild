@@ -64,8 +64,8 @@
             <allow-intent href="itms-apps:*" />
         </platform>
         <plugin name="phonegap-facebook-plugin" spec="~0.12.0">
-            <variable name="APP_ID" value="1047876051936088" />
-            <variable name="APP_NAME" value="Price-Dev" />
+            <param name="APP_ID" value="1047876051936088" />
+            <param name="APP_NAME" value="Price-Dev" />
         </plugin>
         <plugin name="cordova-plugin-themeablebrowser" spec="~0.2.12" />
     </widget>
