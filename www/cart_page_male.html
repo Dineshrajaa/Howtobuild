@@ -66,17 +66,46 @@
 								    <img src="./assets/img/logo.png" class="app-logo-in-popup">
 								</div>
 								<div class="col-xs-2">
-								
-								    
-									  <div class="dropdown">
+				    <div class="dropdown">
+					
+					
+					    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png" class="pop-menu-filter"></a>
+					        <ul class="dropdown-menu needsclick scrollable-menu-filter">
+                        <li>
+                            <a href="#"></a>
+                            <p class="all-text" id="maleall">ALL</p>
+                        </li>
+                        <li>
+                            <a href="#"></a><img src="./assets/img/M_Shirt_30x30.png" id="clothingimg"></li>
+                        <li>
+                            <a href="#"></a><img src="./assets/img/F_Rose_30x30.png" id="watchimg"></li>
+                        
+                        <li>
+                            <a href="#"></a><img src="./assets/img/M_headphone_30x30.png" id='gadgetimg'></li>
+                        <li>
+                            <a href="#"></a><img src="./assets/img/M_tent_30x30.png" id='cycleimg'></li>
+							
+                    </ul>				    </div>		
+				</div>
+				
+				<div class="col-xs-2">
+					 <div class="dropdown" id="colorDropDown">
                     <!-- <a id="clickforcolor"> <img src="./assets/img/Paint_white.png"></a> -->
                     <a id="clickforcolor" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="./assets/img/Paint_white.png" class="pop-menu-color">
                     </a>
-                    <ul class="dropdown-menu scrollable-menu-filter colorpicker">
+                   <!-- <ul class="dropdown-menu  scrollable-menu-color colorpicker">
                         <div class="color-result" id="divColorName">All</div>
                         <div id="colorSlider" style="display:none"></div>
-                    </ul>
+                    </ul>-->
+					
+					<ul class="dropdown-menu scrollable-menu-color">
+							       <li class="all">ALL</li>
+									<li class="black-color"></li>
+									<li class="pink-color"></li>
+									<li class="cream-color"></li>
+									</ul>
+						
                     <!-- <div id="divColorPicker" style="display:none; overflow:visible;position:absolute;background-color:#000">
                         <div id="divColorName" style="background-color:#fff;width:100%;padding:auto;border:3px solid #000;text-align:center">
                             ALL
@@ -111,33 +140,11 @@
                 </div>
 									
 								</div>
-			    <div class="col-xs-2">
-				    <div class="dropdown">
-					
-					
-					    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png" class="pop-menu-filter"></a>
-					        <ul class="dropdown-menu needsclick scrollable-menu-filter">
-                        <li>
-                            <a href="#"></a>
-                            <p class="all-text" id="maleall">ALL</p>
-                        </li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/M_Shirt_30x30.png" id="clothingimg"></li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/F_Rose_30x30.png" id="watchimg"></li>
-                        
-                        <li>
-                            <a href="#"></a><img src="./assets/img/M_headphone_30x30.png" id='gadgetimg'></li>
-                        <li>
-                            <a href="#"></a><img src="./assets/img/M_tent_30x30.png" id='cycleimg'></li>
-							
-                    </ul>				    </div>		
-				</div>
-				
+			    
 				<div class="col-xs-2">
-				    <div class="dropdown">
-					    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Fav_white.png" class="pop-menu-favourite"></a>
-					        <ul class="dropdown-menu scrollable-menu-favourite">
+				    <div class="dropdown" id="favoritedropdown">
+					    <a class="dropdown-toggle" data-toggle="dropdown"id="colord"> <img src="./assets/img/Fav_white.png" class="pop-menu-favourite"></a>
+					        <ul class="dropdown-menu scrollable-menu-favourite" id="mylist">
 							<!--add favitems -->
 								</ul>
 					</div>
