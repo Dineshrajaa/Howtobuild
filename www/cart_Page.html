@@ -1,109 +1,105 @@
-	<!DOCTYPE html>
-	<html lang=en>
+<!DOCTYPE html>
+<html lang=en>
 
-	<head>
-		<title>Cart Page</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-		
-		<script type="text/javascript" src="js/lib/jquery/jquery.min.js"></script>
-		<script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-		<link href="css/styles.css" rel="stylesheet">
-		<link href="css/spectrum.css" rel="stylesheet">
-		<link rel="stylesheet" href="css/odometer.css" />
-		<script type="text/javascript" src="hammer.js"></script>
-		<script src="js/lib/odometer.js"></script>
-		<script type="text/javascript" src="cordova.js"></script>
-		<script type="text/javascript" src="js/common.js"></script>
-		<script type="text/javascript" src="js/spectrum.js"></script>
-		
-		<script type="text/javascript">
-		(function(e, b) {
-			if (!b.__SV) {
-				var a, f, i, g;
-				window.mixpanel = b;
-				b._i = [];
-				b.init = function(a, e, d) {
-					function f(b, h) {
-						var a = h.split(".");
-						2 == a.length && (b = b[a[0]], h = a[1]);
-						b[h] = function() {
-							b.push([h].concat(Array.prototype.slice.call(arguments, 0)))
-						}
-					}
-					var c = b;
-					"undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel";
-					c.people = c.people || [];
-					c.toString = function(b) {
-						var a = "mixpanel";
-						"mixpanel" !== d && (a += "." + d);
-						b || (a += " (stub)");
-						return a
-					};
-					c.people.toString = function() {
-						return c.toString(1) + ".people (stub)"
-					};
-					i = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
-					for (g = 0; g < i.length; g++) f(c, i[g]);
-					b._i.push([a, e, d])
-				};
-				b.__SV = 1.2;
-				a = e.createElement("script");
-				a.type = "text/javascript";
-				a.async = !0;
-				a.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === e.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
-				f = e.getElementsByTagName("script")[0];
-				f.parentNode.insertBefore(a, f)
-			}
-		})(document, window.mixpanel || []);
-		mixpanel.init("341fbe81b1dfcf9dc3865eb1cdc62d77");
-		</script>
-	</head>
+<head>
+    <title>Cart Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="js/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/spectrum.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/odometer.css" />
+    <script type="text/javascript" src="hammer.js"></script>
+    <script src="js/lib/odometer.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/spectrum.js"></script>
+    <script type="text/javascript">
+    (function(e, b) {
+        if (!b.__SV) {
+            var a, f, i, g;
+            window.mixpanel = b;
+            b._i = [];
+            b.init = function(a, e, d) {
+                function f(b, h) {
+                    var a = h.split(".");
+                    2 == a.length && (b = b[a[0]], h = a[1]);
+                    b[h] = function() {
+                        b.push([h].concat(Array.prototype.slice.call(arguments, 0)))
+                    }
+                }
+                var c = b;
+                "undefined" !== typeof d ? c = b[d] = [] : d = "mixpanel";
+                c.people = c.people || [];
+                c.toString = function(b) {
+                    var a = "mixpanel";
+                    "mixpanel" !== d && (a += "." + d);
+                    b || (a += " (stub)");
+                    return a
+                };
+                c.people.toString = function() {
+                    return c.toString(1) + ".people (stub)"
+                };
+                i = "disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+                for (g = 0; g < i.length; g++) f(c, i[g]);
+                b._i.push([a, e, d])
+            };
+            b.__SV = 1.2;
+            a = e.createElement("script");
+            a.type = "text/javascript";
+            a.async = !0;
+            a.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ? MIXPANEL_CUSTOM_LIB_URL : "file:" === e.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";
+            f = e.getElementsByTagName("script")[0];
+            f.parentNode.insertBefore(a, f)
+        }
+    })(document, window.mixpanel || []);
+    mixpanel.init("341fbe81b1dfcf9dc3865eb1cdc62d77");
+    </script>
+</head>
 
-	<body>
-		<div class="container-fluid">
-				<div class="row menu-black-bg">
-									<div class="col-xs-6">
-										<img src="./assets/img/logo.png" class="app-logo-in-popup">
-									</div>
-					<div class="col-xs-2">
-						<div class="dropdown">
-							<a class="dropdown-toggle needsclick" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png" class="pop-menu-filter"></a>
-							 <ul class="dropdown-menu scrollable-menu-filter">
-							<li>
-								<a href="#"></a>
-								<p class="all-text" id="alltext">ALL</p>
-							</li>
-							<li>
-								<a href="#"></a><img src="./assets/img/f_dress_30x30.png" id="clothingimg" /></li>
-							
-							<li>
-								<a href="#"></a><img src="./assets/img/F_Ring_30x30.png" id="necklaceimg"></li>
-							<li>
-								<a href="#"></a><img src="./assets/img/F_bag_30x30.png" id="purseimg"></li>
-							<li>
-								<a href="#"></a><img src="./assets/img/F_Rose_30x30.png" id="sandleimg"></li>
-						</ul>
-						</div>		
-					</div>
-									
-									
-						<div class="col-xs-2">
-					<div class="dropdown" id="colorDropDown">
-						<a id="clickforcolor" class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Paint_white.png" class="pop-menu-color"></a>
-					   <!-- <ul class="dropdown-menu  scrollable-menu-color colorpicker">
+<body>
+    <div class="container-fluid">
+        <div class="row menu-black-bg">
+            <div class="col-xs-6">
+                <img src="./assets/img/logo.png" class="app-logo-in-popup">
+            </div>
+            <div class="col-xs-2">
+                <div class="dropdown">
+                    <a class="dropdown-toggle needsclick" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png" class="pop-menu-filter"></a>
+                    <ul class="dropdown-menu scrollable-menu-filter">
+                        <li class="lipadding">
+                            <a href="#"></a>
+                            <img src="./assets/img/all_25x36.png" id="alltext" />
+                            <!-- <p class="all-text" id="alltext">ALL</p> -->
+                        </li>
+                        <li class="lipadding">
+                            <a href="#"></a><img src="./assets/img/f_dress_30x30.png" id="clothingimg" /></li>
+                        <li class="lipadding">
+                            <a href="#"></a><img src="./assets/img/F_Ring_30x30.png" id="necklaceimg"></li>
+                        <li class="lipadding">
+                            <a href="#"></a><img src="./assets/img/F_bag_30x30.png" id="purseimg"></li>
+                        <li class="lipadding">
+                            <a href="#"></a><img src="./assets/img/F_Rose_30x30.png" id="sandleimg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="dropdown" id="colorDropDown">
+                    <a id="clickforcolor" class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Paint_white.png" class="pop-menu-color"></a>
+                    <!-- <ul class="dropdown-menu  scrollable-menu-color colorpicker">
 							<div class="color-result" id="divColorName">All</div>
 							<div id="fColorSlider" style="display:none"></div> 
 						</ul>-->
-						 <ul class="dropdown-menu scrollable-menu-color">
-							        <li class="all">ALL</li>
-									<li class="black-color"></li>
-									<li class="pink-color"></li>
-									<li class="cream-color"></li>
-									</ul>
-						
-						<!-- <div id="divColorPicker" style="display:none; overflow:visible;position:absolute;background-color:#000">
+                    <ul class="dropdown-menu scrollable-menu-color">
+                        <!-- <li class="all" style="padding-top: 0px !important; padding-bottom: 0px !important;">ALL</li> -->
+                        <li class="all" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important"><img src="./assets/img/all_25x36.png"/></li>
+                        <li class="cream-color"></li>
+                        <li class="black-color"></li>
+                        <li class="pink-color"></li>
+                    </ul>
+                    <!-- <div id="divColorPicker" style="display:none; overflow:visible;position:absolute;background-color:#000">
 							<div id="divColorName" style="background-color:#fff;width:100%;padding:auto;border:3px solid #000;text-align:center">
 								ALL
 							</div>
@@ -134,24 +130,22 @@
 								</div>
 							</div>
 						</div> -->
-					</div>
-				</div>
-					
-					
-					<div class="col-xs-2" >
-						<div class="dropdown" id="favoritedropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" id="colord"> <img src="./assets/img/Fav_white.png" class="pop-menu-favourite"></a>
-								<ul class="dropdown-menu scrollable-menu-favourite" id='mylist'>
-								 <!--addfav item-->
-									</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		<div class="container-fluid off-white-bg">
-			<div class=" add-items">
-			</div>
-			<!--	<div class="row bottom-search-bg">
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="dropdown" id="favoritedropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" id="colord"> <img src="./assets/img/Fav_white.png" class="pop-menu-favourite"></a>
+                    <ul class="dropdown-menu scrollable-menu-favourite" id='mylist'>
+                        <!--addfav item-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid off-white-bg">
+        <div class=" add-items">
+        </div>
+        <!--	<div class="row bottom-search-bg">
 						<div class="col-xs-12" >
 							<form class="form-inline">
 								<div class="form-group bottom-search-margin">
@@ -175,96 +169,96 @@
 							</form>
 						</div>
 					</div> -->
-		</div>
-		<div class="modal1">
-			<!-- Place at bottom of page -->
-		</div>
-		<script type="text/javascript" src="js/cart_Page.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
-		<script src="js/lib/jquery-ui/jquery-ui.js"></script>
-		<script src="js/lib/jquery-touch/jquery.ui.touch-punch.min.js"></script>
-		<script type="text/javascript" src="js/spectrum.js"></script>
-	</body>
-	<script>
-	$('#clickforcolor').click(function(e) {
-	 
-		if ($("#fColorSlider").is(':visible'))
-			$("#fColorSlider").hide();
-			
-		else {
-			$("#fColorSlider").show();
-		
-		}
-	});
+    </div>
+    <div class="modal1">
+        <!-- Place at bottom of page -->
+    </div>
+    <script type="text/javascript" src="js/cart_Page.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/lib/jquery-ui/jquery-ui.js"></script>
+    <script src="js/lib/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/spectrum.js"></script>
+</body>
+<script>
+$('#clickforcolor').click(function(e) {
 
-	   $(document).ready(function() {
-			$("#fColorSlider").slider({
-				max: 100,
-				min: 0,
-				range: "min",
-				value: 0,
-				orientation: "vertical"
-			});
-		});
+    if ($("#fColorSlider").is(':visible'))
+        $("#fColorSlider").hide();
 
-	/*$("#fColorSlider").on("slidestop", function(event, ui) {
-		console.log("ui.value:" + ui.value)
-		if (ui.value > 0 && ui.value < 10)
-			$("#divColorName").text("Black");
-		else if (ui.value > 10 && ui.value < 20)
-			$("#divColorName").text("Grey");
-		else if (ui.value > 20 && ui.value < 30)
-			$("#divColorName").text("White");
-		else if (ui.value > 20 && ui.value < 30)
-			$("#divColorName").text("Pink");
-		else if (ui.value > 30 && ui.value < 40)
-			$("#divColorName").text("Blue");
-		else if (ui.value > 30 && ui.value < 40)
-			$("#divColorName").text("Violet");
-		else if (ui.value > 40 && ui.value < 50)
-			$("#divColorName").text("Green");
-		else if (ui.value > 50 && ui.value < 60)
-			$("#divColorName").text("Yellow");
-		else if (ui.value > 60 && ui.value < 70)
-			$("#divColorName").text("Orange");
-		else if (ui.value > 70 && ui.value < 80)
-			$("#divColorName").text("Maroon");
-		else if (ui.value > 80 && ui.value < 99)
-			$("#divColorName").text("Red");
-		else if (ui.value == 0 || ui.value == 100)
-			$("#divColorName").text("All");
-	});*/
-	$("#openpickerlink").spectrum({
-		color: "#dd3333",
-		change: function(coloe) {
-			alert("updating borders")
+    else {
+        $("#fColorSlider").show();
 
-		},
-		show: function() {
-			//alert("Shown")
+    }
+});
 
-		},
-		hide: function() {
-			alert("hidden")
-		}
-	});
+$(document).ready(function() {
+    $("#fColorSlider").slider({
+        max: 100,
+        min: 0,
+        range: "min",
+        value: 0,
+        orientation: "vertical"
+    });
+});
 
-	function settext(text) {
-		$("#divColorName").html(text);
+/*$("#fColorSlider").on("slidestop", function(event, ui) {
+	console.log("ui.value:" + ui.value)
+	if (ui.value > 0 && ui.value < 10)
+		$("#divColorName").text("Black");
+	else if (ui.value > 10 && ui.value < 20)
+		$("#divColorName").text("Grey");
+	else if (ui.value > 20 && ui.value < 30)
+		$("#divColorName").text("White");
+	else if (ui.value > 20 && ui.value < 30)
+		$("#divColorName").text("Pink");
+	else if (ui.value > 30 && ui.value < 40)
+		$("#divColorName").text("Blue");
+	else if (ui.value > 30 && ui.value < 40)
+		$("#divColorName").text("Violet");
+	else if (ui.value > 40 && ui.value < 50)
+		$("#divColorName").text("Green");
+	else if (ui.value > 50 && ui.value < 60)
+		$("#divColorName").text("Yellow");
+	else if (ui.value > 60 && ui.value < 70)
+		$("#divColorName").text("Orange");
+	else if (ui.value > 70 && ui.value < 80)
+		$("#divColorName").text("Maroon");
+	else if (ui.value > 80 && ui.value < 99)
+		$("#divColorName").text("Red");
+	else if (ui.value == 0 || ui.value == 100)
+		$("#divColorName").text("All");
+});*/
+$("#openpickerlink").spectrum({
+    color: "#dd3333",
+    change: function(coloe) {
+        alert("updating borders")
 
-	}
-	</script>
-	<style type="text/css">
-	.divCpicker {
-		height: 350px;
-		position': 'absolute';
-	 left: 0;
-		top: 0;
-		font-size: 10px;
-		width: auto;
-		height: 20px;
-		border: solid 1px red;
-	}
-	</style>
+    },
+    show: function() {
+        //alert("Shown")
 
-	</html>
+    },
+    hide: function() {
+        alert("hidden")
+    }
+});
+
+function settext(text) {
+    $("#divColorName").html(text);
+
+}
+</script>
+<style type="text/css">
+.divCpicker {
+    height: 350px;
+    position': 'absolute';
+ left: 0;
+    top: 0;
+    font-size: 10px;
+    width: auto;
+    height: 20px;
+    border: solid 1px red;
+}
+</style>
+
+</html>

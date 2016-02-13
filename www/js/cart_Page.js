@@ -161,55 +161,21 @@
 				            "id": '123remove'
 				        });
 				    });
-				    //hide div if no fav list
-
-				    /*	$('#favoritedropdown').find('ul').each(function(){
-				    	   var txt = $("li", this).text();
-				    	   if(txt.length <= 0){
-				    		  $(this).hide();
-				    	   }
-				    	}); */
-				    //$('#colord').on('click' ,'#colord')
-
-				    /*if($('#favoritedropdown').hasClass('open')) 
-				  {
-					 if($('.scrollable-menu-favourite div').length >=1 )
-					  {
-					  
-					  console.log('has items')
-					  }
-					  else
-					{
-					$('.scrollable-menu-favourite').css('display', 'none');
-					 console.log('has no items')
-					}}*/
-
-				    $('#favoritedropdown').on('click',function() {
-
-				        if ($('#favoritedropdown').hasClass('open')) {
-				        	console.log("$('.scrollable-menu-favourite div').length:"+$('.scrollable-menu-favourite div').length);
-				            if ($('.scrollable-menu-favourite div').length >= 1) {
-				                $('.scrollable-menu-favourite').css('display', 'block');
-				                $('.scrollable-menu-favourite').css('visibility', 'visible');
-				                console.log('has items')
-				                    //$('#colord').data('toggle','dropdown');
-				            } else {
-				                //$('#colord').data('toggle','');
-				                //$('.scrollable-menu-favourite').hide();
-				                $('.scrollable-menu-favourite').css('display', 'none');
-				                $('.scrollable-menu-favourite').css('visibility', 'hidden');
-				                console.log('has no items')
-				            }
-
-				        } else {
-
-
-				            console.log('not open')
-				        }
-
-				    });
-
-				    //filter by category
+					//hide div if no fav list
+					
+				/*	$('#favoritedropdown').find('ul').each(function(){
+					   var txt = $("li", this).text();
+					   if(txt.length <= 0){
+						  $(this).hide();
+					   }
+					}); */
+					//$('#colord').on('click' ,'#colord')
+					//disable favorite if no favorite
+	        if($('.scrollable-menu-favourite div').length < 1) {
+	        	$("#favoritedropdown .dropdown-toggle").addClass("disabled");
+	        }
+					   
+										//filter by category
 				    /*$(".scrollable-menu-filter li:not(:first-child)").click(function(){
 				    alert('hello');
 				       mixpanel.track("filter_by_category", {
@@ -220,28 +186,32 @@
 
 				    //display on basis of category 
 
-				    $(".scrollable-menu-color").on("click", "li", function(event) {
-				        var colorRange = $(event.target).attr('class')
-				        if (colorRange == 'black-color') {
-				            colorRange = 'black'
-				            console.log(colorRange)
-				        } else if (colorRange == 'pink-color') {
-				            colorRange = 'lightpink'
-				            console.log(colorRange)
-				        } else if (colorRange == 'cream-color') {
-				            colorRange = 'cream'
-				            console.log(colorRange)
-				        } else {
-				            colorRange == 'ALL'
-				            console.log(colorRange)
-				        }
-
-				        callforcolorfilter(colorRange)
-
-				    });
-
-
-
+				    $(".scrollable-menu-color").on("click", "li", function(event) { 
+					     var colorRange = $(event.target).attr('class')
+						 if(colorRange=='black-color')
+						 {
+						 colorRange='black'
+						 console.log(colorRange)
+						 }
+						 else if(colorRange=='pink-color') {
+						 colorRange='lightpink'
+						 console.log(colorRange)
+						 }
+						 else if(colorRange=='cream-color') {
+						 colorRange='cream'
+						 console.log(colorRange)
+						 }
+						 else{
+						 colorRange=='ALL'
+						 console.log(colorRange)
+						 }
+						 
+						 callforcolorfilter(colorRange)
+					
+					   });
+					
+					
+					
 				    $(".dropdown-menu").on("click", "li", function(event) {
 				        console.log(event.target.id)
 				        var id = event.target.id;
@@ -373,13 +343,13 @@
 				    });
 
 				    //add to fav on click of like button 
-
+				   
 
 				    $(document).on('click', '.like', function(e) {
-
+					
 				        console.log('inside like:' + $(this).data("favorite"));
 				        var proid = parseInt(e.target.id);
-				        var propicid = e.target.id;
+				        var propicid=e.target.id;
 				        if ($(this).data("favorite") == "like") {
 				            var purchaseurl = $(this).data("purchaseurl");
 				            $(this).data("favorite", "liked");
@@ -397,17 +367,19 @@
 				                    console.log(JSON.stringify(response));
 				                    console.log(proid);
 				                    var srcimg = $("#" + proid).attr('src')
-				                    console.log(srcimg);
-				                    var removefavid = response.pk
-				                    $('.scrollable-menu-favourite').append('<div class="row favourite-dropdown-button-padding" id="' + removefavid + 'div">\
-								    <img src="' + srcimg + '" class="favourite-item" onclick="showPurchasePage(this)" data-purchaseurl="' + purchaseurl + '" style="width:100px;">\
-							        <div class="col-xs-6 cart-btn-right-padding">\
-										<button class="btn btn-block delete" type="button" class="removefav" data-likebtnid="' + propicid + '"data-prodid=' + removefavid + ' onclick="removeFromFavorite(this)"><img src="./assets/img/cross.png" id="' + removefavid + 'cross"></button>\
-								    </div>\
-								   </div>');
-
-				                    console.log("Successss - adding " + removefavid);
-
+				                    console.warn(srcimg);
+				                    var removefavid = response.pk;
+				                    var favObject = {
+				                    	itemThumbURL: srcimg,
+				                    	itemStoreLink: purchaseurl,
+				                    	pk: removefavid,
+				                    	likebtnid: propicid
+				                    };
+				                    $('.scrollable-menu-favourite').append(getFavoritesHTML(favObject));
+				                    console.log("Successss - adding "+removefavid);
+								            if($('.scrollable-menu-favourite div').length > 0) {
+								            	$("#favoritedropdown .dropdown-toggle").removeClass("disabled");
+								            }
 
 				                },
 				                error: function() {
@@ -432,9 +404,13 @@
 				                type: "POST",
 				                dataType: "json",
 				                success: function() {
-				                    var rmdivid = proid + 'div';
-				                    console.log("Successss " + rmdivid);
+				                    var rmdivid = propicid + 'div';
+				                    console.log("Successss "+rmdivid);
 				                    $("#" + rmdivid).remove();
+
+								            if($('.scrollable-menu-favourite div').length < 1) {
+								            	$("#favoritedropdown .dropdown-toggle").addClass("disabled");
+								            }
 				                },
 				                error: function() {
 				                    console.log("No JSON data returned");
@@ -481,8 +457,8 @@
 				    var selectedProId = $(selectedPro).attr("id");
 				    var carId = $(selectedPro).data("carid");
 				    // Stop Auto carousel
+				    $("#" + carId).carousel('pause');
 				    $("#" + carId).carousel(0);
-				    $("#" + carId).carousel('pause')
 				    $("#" + carId).carousel({
 				        interval: false
 				    });
@@ -516,36 +492,36 @@
 				            var productImages = data.photo_set;
 
 				            if (plength == 5) {
-				                imageArray[0] = productImages[0].url_small
-				                imageArray[1] = productImages[1].url_small
-				                imageArray[2] = productImages[2].url_small
-				                imageArray[3] = productImages[3].url_small
-				                imageArray[4] = productImages[4].url_small
+				                imageArray[0] = productImages[0].url_large
+				                imageArray[1] = productImages[1].url_large
+				                imageArray[2] = productImages[2].url_large
+				                imageArray[3] = productImages[3].url_large
+				                imageArray[4] = productImages[4].url_large
 				            } else if (plength == 4) {
-				                imageArray[0] = productImages[0].url_medium
-				                imageArray[1] = productImages[1].url_medium
-				                imageArray[2] = productImages[2].url_medium
-				                imageArray[3] = productImages[3].url_medium
-				                imageArray[4] = productImages[1].url_medium
+				                imageArray[0] = productImages[0].url_large
+				                imageArray[1] = productImages[1].url_large
+				                imageArray[2] = productImages[2].url_large
+				                imageArray[3] = productImages[3].url_large
+				                imageArray[4] = productImages[1].url_large
 
 				            } else if (plength == 3) {
-				                imageArray[0] = productImages[0].url_medium
-				                imageArray[1] = productImages[1].url_medium
-				                imageArray[2] = productImages[2].url_medium
-				                imageArray[3] = productImages[0].url_medium
-				                imageArray[4] = productImages[1].url_medium
+				                imageArray[0] = productImages[0].url_large
+				                imageArray[1] = productImages[1].url_large
+				                imageArray[2] = productImages[2].url_large
+				                imageArray[3] = productImages[0].url_large
+				                imageArray[4] = productImages[1].url_large
 				            } else if (plength == 2) {
-				                imageArray[0] = productImages[0].url_medium
-				                imageArray[1] = productImages[1].url_medium
-				                imageArray[2] = productImages[0].url_medium
-				                imageArray[3] = productImages[1].url_medium
-				                imageArray[4] = productImages[0].url_medium
+				                imageArray[0] = productImages[0].url_large
+				                imageArray[1] = productImages[1].url_large
+				                imageArray[2] = productImages[0].url_large
+				                imageArray[3] = productImages[1].url_large
+				                imageArray[4] = productImages[0].url_large
 				            } else if (plength == 1) {
-				                imageArray[0] = productImages[0].url_medium
-				                imageArray[1] = productImages[0].url_medium
-				                imageArray[2] = productImages[0].url_medium
-				                imageArray[3] = productImages[0].url_medium
-				                imageArray[4] = productImages[0].url_medium
+				                imageArray[0] = productImages[0].url_large
+				                imageArray[1] = productImages[0].url_large
+				                imageArray[2] = productImages[0].url_large
+				                imageArray[3] = productImages[0].url_large
+				                imageArray[4] = productImages[0].url_large
 				            } else {
 				                imageArray[0] = "./assets/img/no_img.png"
 				                imageArray[1] = "./assets/img/no_img.png"
@@ -701,11 +677,13 @@
 
 				        //modal code for loadpfrof
 				        $('.add-items').append('<div class="row ">\
-							<div class="col-xs-6 right-padding ">' + renderItem(i, parsedata[0].products[i], img10) +
-				            '</div>\
-							<div class="col-xs-6 left-padding ">' + renderItem(i + 1, parsedata[0].products[i + 1], img11) +
-				            '</div>');
-				        /* if (parsedata[0].products[v]) {
+							<div class="col-xs-6 right-padding ">'
+								+ renderItem(i, parsedata[0].products[i], img10) +
+							'</div>\
+							<div class="col-xs-6 left-padding ">'
+							+ renderItem(i+1, parsedata[0].products[i+1], img11) +
+						'</div>');
+				       /* if (parsedata[0].products[v]) {
 				            $('.add-items').append('<div class="col-xs-6 left-padding ">\
 							<img src="' + img11 + '" class="img-responsive items" data-carid="myModal' + i + "" + 1 + '" onclick="setSelectedProduct(this)" id="' + parsedata[0].products[i + 1].fields.id + '"  alt=' + v + ' data-toggle="" data-target="#myModal' + i + 1 + '">\
 						<p class=""></p>' + getModalHTML(i + "" + 1, parsedata[0].products[i + 1], img11) +
@@ -726,15 +704,16 @@
 
 
 				function renderItem(uniqueId, product, imgUrl) {
-				    if (typeof product == 'undefined') {
-				        return "";
-				    }
-				    return '<img src="' + imgUrl + '" class="img-responsive items" data-carid="myModal' + uniqueId + '" onclick="setSelectedProduct(this)" id="' + product.fields.id + '" alt=' + uniqueId + ' data-toggle="" data-target="#myModal' + uniqueId + '">\
+					if(typeof product == 'undefined') {
+						return "";
+					}
+					console.warn(product);
+					return '<img src="' + imgUrl + '" class="img-responsive items" data-carid="myModal' + uniqueId + '" onclick="setSelectedProduct(this)" id="' + product.fields.id + '" alt=' + uniqueId + ' data-toggle="" data-target="#myModal' + uniqueId + '">\
 								<p class=""></p>' + getModalHTML(uniqueId, product, imgUrl) +
-				        '<div class="row border-outline">\
+				            '<div class="row border-outline">\
 									<div class="col-xs-12 pic" >\
-										<p ><img src="./assets/img/like.png"  class="like" data-favorite="like" data-purchaseurl="' + product.fields.purchase_url + '" id="' + product.fields.id + 'like">' + product.fields.brand + '\
-											<br> <span>' + product.fields.price + '</span></p>\
+										<p ><img src="./assets/img/like.png"  class="like" data-favorite="like" data-purchaseurl="' + product.fields.purchase_url + '" id="' + product.fields.id + 'like"><span style="text-decoration: none!important;" data-toggle="modal" data-target="#myModal' + uniqueId + '">' + product.fields.brand + '</span>\
+											<br> <span class="strike" data-toggle="modal" data-target="#myModal' + uniqueId + '">$' + product.fields.price + '</span></p>\
 									</div>\
 								</div>';
 				}
@@ -853,7 +832,7 @@
 				            },
 				            title: {
 				                color: '#ffffff',
-				                staticText: 'Price'
+				                staticText: 'Back to Browsing'
 				            },
 				            closeButton: {
 				                wwwImage: 'img/back.png',
@@ -922,11 +901,10 @@
 				$('#colorDropDown,#favoritedropdown').on('shown.bs.dropdown', function() {
 				    // var scrollPos = 0;
 				    scrollPos = $('body').scrollTop();
-				    $('body').css({
-				        /*
-				        				        overflow: 'hidden',
-				        				        position: 'fixed',
-				        				        top: -scrollPos*/
+				    $('body').css({/*
+				        overflow: 'hidden',
+				        position: 'fixed',
+				        top: -scrollPos*/
 				    });
 				});
 				//show x after modal is shown and then reposition it
@@ -947,7 +925,7 @@
 				    var imagex = $(e.target).find("img.pop-up-close-icon");
 				    var modalPosition = modalBody.position();
 				    console.warn(modalPosition);
-				    $('.carousel-inner .item:first').addClass('active');
+				    //$('.carousel-inner .item:first').addClass('active');
 				    imagex.css({
 				        "position": "absolute",
 				        "left": function() {
@@ -1298,6 +1276,16 @@
 				    return shortText
 				}
 
+				function getFavoritesHTML(favObj) {
+					//data-likebtnid="'+favObj.likebtnid+'" 
+					return '<div class="row favourite-dropdown-button-padding" id="' + favObj.likebtnid + 'div">\
+					    <img src="' + favObj.itemThumbURL + '" data-purchaseurl="' + favObj.itemStoreLink + '" class="favourite-item" style="width:100px;" onclick="showPurchasePage(this)">\
+				        <div class="col-xs-6 cart-btn-right-padding">\
+							<button class="btn btn-block delete" type="button" class="removefav" data-likebtnid="'+favObj.likebtnid+'" data-prodid=' + favObj.pk + ' onclick="removeFromFavorite(this)"><img src="./assets/img/cross.png" id="' + favObj.pk + 'cross"></button>\
+					    </div>\
+					</div>'
+				}
+
 				function fetchFavorites() {
 				    $.ajax({
 				        url: "http://staging12.getpriceapp.com/favourites/list",
@@ -1310,23 +1298,19 @@
 				            console.log("favourites list success");
 				            console.log(favorites);
 				            $('.scrollable-menu-favourite').html('');
-
 				            for (var i = 0; i < favorites.length; i++) {
-				                $('.scrollable-menu-favourite').append('<div class="row favourite-dropdown-button-padding" id="' + favorites[i].pk + 'div">\
-								    <img src="' + favorites[i].itemThumbURL + '" data-purchaseurl="' + favorites[i].itemStoreLink + '" class="favourite-item" style="width:100px;" onclick="showPurchasePage(this)">\
-							        <div class="col-xs-6 cart-btn-right-padding">\
-										<button class="btn btn-block delete" type="button" class="removefav" data-prodid=' + favorites[i].pk + ' onclick="removeFromFavorite(this)"><img src="./assets/img/cross.png" id="' + favorites[i].pk + 'cross"></button>\
-								    </div>\
-								   </div>');
+				            		var itemIdProduct = favorites[i].itemID;
+				            		favorites[i].likebtnid = itemIdProduct+"like";
+				                $('.scrollable-menu-favourite').append(getFavoritesHTML(favorites[i]));
+				                //update heart image
+				                $("#"+itemIdProduct+"like").attr("src","./assets/img/liked.png");
+				            		$("#"+itemIdProduct+"like").data("favorite", "liked");
+				            		console.warn("#"+itemIdProduct+"like");
+				            		console.warn($("#"+itemIdProduct+"like"));
 				            }
-				            if ($('#favoritedropdown').hasClass('open')) {
-				                if ($('.scrollable-menu-favourite div').length >= 1) {
 
-				                    console.log('has items')
-				                } else {
-				                    $('.scrollable-menu-favourite').css('display', 'none');
-				                    console.log('has no items')
-				                }
+				            if($('.scrollable-menu-favourite div').length > 0) {
+				            	$("#favoritedropdown .dropdown-toggle").removeClass("disabled");
 				            }
 				        },
 				        error: function() {
@@ -1337,8 +1321,9 @@
 
 				function removeFromFavorite(selectedPro) {
 				    // Method to remove favorites
+				    console.warn(selectedPro);
 				    var pkid = $(selectedPro).data("prodid");
-				    var likePicId = $(selectedPro).data("likebtnid");
+				    var likePicId=$(selectedPro).data("likebtnid");
 				    $.ajax({
 				        url: "http://staging12.getpriceapp.com/favourites/delete",
 				        data: {
@@ -1348,11 +1333,15 @@
 				        type: "POST",
 				        dataType: "json",
 				        success: function() {
-				            var rmdivid = pkid + 'div';
+				            var rmdivid = likePicId + 'div';
 				            console.log("Successss " + rmdivid);
 				            $("#" + rmdivid).remove();
-				            $("#" + likePicId).attr("src", "./assets/img/like.png");
-				            $("#" + likePicId).data("favorite", "like");
+				            console.warn($("#" + rmdivid));
+				            $("#"+likePicId).attr("src","./assets/img/like.png");
+				            $("#"+likePicId).data("favorite","like");
+				            if($('.scrollable-menu-favourite div').length < 1) {
+				            	$("#favoritedropdown .dropdown-toggle").addClass("disabled");
+				            }
 				        },
 				        error: function() {
 				            console.log("No JSON data returned");
