@@ -1,4 +1,4 @@
-				
+
 				$(document).ready(function() {
 				    var scrollPos = 0; // variable for enabling & disabling scroll
 				    console.log('doc ready');
@@ -263,7 +263,7 @@
 
 
 				            } else if (id == 'cycleimg') {
-				                cat = 'outdoogear' //old
+				                cat = 'outdoor' //old
 				                console.log(cat);
 
 				            } else {
@@ -460,6 +460,7 @@
 				    // Stop Auto carousel
 				    $("#" + carId).carousel('pause');
 				    $("#" + carId).carousel(0);
+				    $("#" + carId).carousel('pause');
 				    $("#" + carId).carousel({
 				        interval: false
 				    });
@@ -754,28 +755,28 @@
 												<div class="item active">\
 													<div class="row">\
 														<div class="col-md-12" >\
-															<a class="thumbnail" href="#"><img id="img1myModal' + uniqueId + '" src="' + imgUrl + '"  class="slider-img carimage"></a>\
+															<a class="thumbnail" href="#"><img id="img1myModal' + uniqueId + '" src=""  class="slider-img carimage"></a>\
 														</div>\
 													</div>\
 												</div>\
 												<div class="item">\
 													<div class="row">\
 														<div class="col-md-12">\
-															<a class="thumbnail" href="#"><img id="img2myModal' + uniqueId + '" src="./assets/img/email-Signup_bk.png" class="slider-img carimage"></a>\
+															<a class="thumbnail" href="#"><img id="img2myModal' + uniqueId + '" src="" class="slider-img carimage"></a>\
 														</div>\
 													</div>\
 												</div>\
 												<div class="item">\
 													<div class="row">\
 														<div class="col-md-12">\
-															<a class="thumbnail" href="#"><img id="img3myModal' + uniqueId + '" src="./assets/img/favourite-img.png" class="slider-img carimage"></a>\
+															<a class="thumbnail" href="#"><img id="img3myModal' + uniqueId + '" src="" class="slider-img carimage"></a>\
 														</div>\
 													</div>\
 												</div>\
 												<div class="item">\
 													<div class="row">\
 														<div class="col-md-12">\
-															<a class="thumbnail" href="#"><img id="img4myModal' + uniqueId + '" src="./assets/img/price.png" class="slider-img carimage"></a>\
+															<a class="thumbnail" href="#"><img id="img4myModal' + uniqueId + '" src="" class="slider-img carimage"></a>\
 														</div>\
 													</div>\
 												</div>\

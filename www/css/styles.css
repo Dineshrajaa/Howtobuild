@@ -136,9 +136,9 @@
 		
 		.border-outline span {
 		    text-decoration: line-through;
-		    font-size: 9px Roboto;
+		    font-size: 17px;
 		    /*Included Roboto for avoiding strike through issue*/
-		    /*font-family: 'Avenir Next Medium';*/
+		    font-family: 'Avenir Next Medium';
 		    text-align: right;
 		    vertical-align: 10px;
 		    margin-right: 5px;
@@ -261,7 +261,7 @@
 		        margin-left: -66px;
 		    }
 		    .scrollable-menu-filter {
-		        min-width: auto;
+		        min-width: 45px;
 		        width: 230%;
 		    }
 		    .scrollable-menu-profile {

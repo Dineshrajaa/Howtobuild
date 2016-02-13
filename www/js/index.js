@@ -206,7 +206,8 @@ var loginMethods = {
                 if (data.token) {
                     localStorage.setItem('token', data.token);
                     localStorage.setItem('tokenid', data.id);
-                    console.log(data.token);
+                    /*window.tokenid =data.id; // Store it in the window to make it global
+                    console.log("tokenid:"+tokenid);*/
                     if (localStorage.getItem('type') == 'female') {
                         window.location = 'cart_page_male.html'
                             // window.location='cart_Page.html'
