@@ -213,13 +213,13 @@
 					
 					
 				    $(".dropdown-menu").on("click", "li", function(event) {
-				        console.log(event.target.id)
+				        console.log("dropdown-menu id:"+event.target.id)
 				        var id = event.target.id;
 
 
 				        categoryitemclicked = true
 				        page_no = 1;
-				        if (userdata.fbGender == 'female') {
+				        if (userdata.fbGender == 'male') {
 				            type = 'female'
 				            if (id == 'clothingimg') {
 				                cat = 'clothing' //req
@@ -488,7 +488,6 @@
 				            console.log(selectedProId);
 
 				            var plength = data.photo_set.length
-				            console.log(plength);
 				            var productImages = data.photo_set;
 
 				            if (plength == 5) {
@@ -530,11 +529,7 @@
 				                imageArray[4] = "./assets/img/no_img.png"
 
 				            }
-				            console.log(imageArray[0]);
-				            console.log(imageArray[1]);
-				            console.log(imageArray[2]);
-				            console.log(imageArray[3]);
-				            console.log(imageArray[4]);
+				            
 				            $("#" + carId).find("img.carimage").each(function(i, e) {
 
 				                console.log(i);
@@ -832,7 +827,7 @@
 				            },
 				            title: {
 				                color: '#ffffff',
-				                staticText: 'Back to Browsing'
+				                staticText: 'BACK TO BROWSING'
 				            },
 				            closeButton: {
 				                wwwImage: 'img/back.png',
