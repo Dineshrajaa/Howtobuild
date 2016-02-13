@@ -228,6 +228,7 @@
 		    border-radius: 5px !important;
 		    padding: 0 5px !important;
 		    margin-top: -6px !important;
+		    margin-left: 35%; /*To place the delete icon in center*/
 		}
 		
 		.add-to-cart img,
@@ -1585,9 +1586,9 @@
 		}
 		
 		.scrollable-menu-color > li {
-		    margin: 6px 7px 9px;
+		    /*margin: 6px 0px 9px;*/
 		    padding: 20px 0 5px;
-		    border: 1px solid #acacac;
+		   /* border: 1px solid #acacac;*/
 		}
 		
 		.all-color {
@@ -1600,7 +1601,7 @@
 		}
 		
 		.pink-color {
-		    background-color: #FF69B4;
+		    /*background-color: #FF69B4;*/
 		}
 		
 		.purple-color {
@@ -1612,7 +1613,7 @@
 		}
 		
 		.black-color {
-		    background-color: #000;
+		    /*background-color: #000;*/
 		}
 		
 		.yellow-color {
@@ -2184,9 +2185,7 @@
 		    margin-top: -3px !important;
 		}
 		
-		.pink-color {
-		    background-color: #FF69B4;
-		}
+		
 		
 		.purple-color {
 		    background-color: #800080;
@@ -2197,7 +2196,7 @@
 		}
 		
 		.black-color {
-		    background-color: #000;
+		    /*background-color: #000;*/
 		}
 		
 		.yellow-color {
@@ -2214,7 +2213,7 @@
 		
 		.cream-color {
 		    /*background-color: #fffdd0;*/
-		    background-color: #fff;
+		    /*background-color: #fff;*/
 		}
 		
 		.blue-color {

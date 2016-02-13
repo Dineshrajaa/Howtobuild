@@ -1,3 +1,4 @@
+				
 				$(document).ready(function() {
 				    var scrollPos = 0; // variable for enabling & disabling scroll
 				    console.log('doc ready');
@@ -117,7 +118,7 @@
 				    });
 
 				    //color--picker
-				    $(document).on('click', '.border-colorpicker div', function(e) {
+				    /*$(document).on('click', '.border-colorpicker div', function(e) {
 
 				        var id = e.target.id;
 				        if (id == 'c19' || id == 'c20')
@@ -133,7 +134,7 @@
 
 				        callforcolorfilter();
 
-				    });
+				    });*/
 				    //add to cart 
 				    $(document).on('click', '.app-logo-in-popup', function() {
 				        cat = ""
@@ -186,18 +187,18 @@
 
 				    //display on basis of category 
 
-				    $(".scrollable-menu-color").on("click", "li", function(event) { 
-					     var colorRange = $(event.target).attr('class')
-						 if(colorRange=='black-color')
+				   /* $(".scrollable-menu-color").on("click", "li", function(event) { 
+					     var colorValue = $(event.target).attr('class')
+						 if(colorValue=='black-color')
 						 {
 						 colorRange='black'
 						 console.log(colorRange)
 						 }
-						 else if(colorRange=='pink-color') {
+						 else if(colorValue=='pink-color') {
 						 colorRange='lightpink'
 						 console.log(colorRange)
 						 }
-						 else if(colorRange=='cream-color') {
+						 else if(colorValue=='cream-color') {
 						 colorRange='cream'
 						 console.log(colorRange)
 						 }
@@ -208,7 +209,7 @@
 						 
 						 callforcolorfilter(colorRange)
 					
-					   });
+					   });*/
 					
 					
 					
@@ -864,6 +865,10 @@
 				                }, 3000);
 
 				            }
+				        });
+				        ref.addEventListener('closePressed',function(event){
+				        	// Fix for back button in iOS
+				        	ref.close();
 				        });
 
 

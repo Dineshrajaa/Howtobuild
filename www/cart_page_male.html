@@ -9,7 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/spectrum.css" rel="stylesheet">
     <link rel="stylesheet" href="css/odometer.css" />
-	<script type="text/javascript" src="hammer.js"></script>
+    <script type="text/javascript" src="hammer.js"></script>
     <script src="js/lib/odometer.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
     <link href="css/styles.css" rel="stylesheet">
@@ -60,17 +60,15 @@
 </head>
 
 <body>
-<div class="container-fluid">
-		    <div class="row menu-black-bg">
-							    <div class="col-xs-6">
-								    <img src="./assets/img/logo.png" class="app-logo-in-popup">
-								</div>
-								<div class="col-xs-2">
-				    <div class="dropdown">
-					
-					
-					    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png" class="pop-menu-filter"></a>
-					        <ul class="dropdown-menu needsclick scrollable-menu-filter">
+    <div class="container-fluid">
+        <div class="row menu-black-bg">
+            <div class="col-xs-6">
+                <img src="./assets/img/logo.png" class="app-logo-in-popup">
+            </div>
+            <div class="col-xs-2">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png" class="pop-menu-filter"></a>
+                    <ul class="dropdown-menu needsclick scrollable-menu-filter">
                         <li class="lipadding">
                             <a href="#"></a>
                             <!-- <p class="all-text" id="maleall">ALL</p> -->
@@ -80,35 +78,34 @@
                             <a href="#"></a><img src="./assets/img/M_Shirt_30x30.png" id="clothingimg"></li>
                         <li class="lipadding">
                             <a href="#"></a><img src="./assets/img/F_Rose_30x30.png" id="watchimg"></li>
-                        
                         <li class="lipadding">
                             <a href="#"></a><img src="./assets/img/M_headphone_30x30.png" id='gadgetimg'></li>
                         <li class="lipadding">
                             <a href="#"></a><img src="./assets/img/M_tent_30x30.png" id='cycleimg'></li>
-							
-                    </ul>				    </div>		
-				</div>
-				
-				<div class="col-xs-2">
-					 <div class="dropdown" id="colorDropDown">
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="dropdown" id="colorDropDown">
                     <!-- <a id="clickforcolor"> <img src="./assets/img/Paint_white.png"></a> -->
                     <a id="clickforcolor" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="./assets/img/Paint_white.png" class="pop-menu-color">
                     </a>
-                   <!-- <ul class="dropdown-menu  scrollable-menu-color colorpicker">
+                    <!-- <ul class="dropdown-menu  scrollable-menu-color colorpicker">
                         <div class="color-result" id="divColorName">All</div>
                         <div id="colorSlider" style="display:none"></div>
                     </ul>-->
-					
-					<ul class="dropdown-menu scrollable-menu-color">
-							       <!-- <li class="all">ALL</li> -->
-                                   <li style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important"><img src="./assets/img/all_25x36.png"/></li>
-                                   <li class="cream-color"></li>
-									<li class="black-color"></li>
-									<li class="pink-color"></li>
-									
-									</ul>
-						
+                    <ul class="dropdown-menu scrollable-menu-color">
+                        <!-- <li class="all">ALL</li> -->
+                        <!-- <li style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important"><img src="./assets/img/all_35x25.png"/></li>
+                                   <li class="cream-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important"><img src="./assets/img/Pink_35x25.png"></li>
+                                    <li class="black-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important"><img src="./assets/img/black-gradient_35x25.png"></li>
+                                    <li class="pink-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important"><img src="./assets/img/White-gradient_35x25.png"></li> -->
+                        <li style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter(ALL)"><img src="./assets/img/all_35x25.png" /></li>
+                        <li class="pink-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter('white')"><img src="./assets/img/White-gradient_35x25.png"></li>
+                        <li class="black-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter('black')"><img src="./assets/img/black-gradient_35x25.png"></li>
+                        <li class="cream-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter('lightpink')"><img src="./assets/img/Pink_35x25.png"></li>
+                    </ul>
                     <!-- <div id="divColorPicker" style="display:none; overflow:visible;position:absolute;background-color:#000">
                         <div id="divColorName" style="background-color:#fff;width:100%;padding:auto;border:3px solid #000;text-align:center">
                             ALL
@@ -141,46 +138,44 @@
                         </div>
                     </div> -->
                 </div>
-									
-								</div>
-			    
-				<div class="col-xs-2">
-				    <div class="dropdown" id="favoritedropdown">
-					    <a class="dropdown-toggle" data-toggle="dropdown"id="colord"> <img src="./assets/img/Fav_white.png" class="pop-menu-favourite"></a>
-					        <ul class="dropdown-menu scrollable-menu-favourite" id="mylist">
-							<!--add favitems -->
-								</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+            </div>
+            <div class="col-xs-2">
+                <div class="dropdown" id="favoritedropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" id="colord"> <img src="./assets/img/Fav_white.png" class="pop-menu-favourite"></a>
+                    <ul class="dropdown-menu scrollable-menu-favourite" id="mylist">
+                        <!--add favitems -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid off-white-bg">
         <div class="add-items">
         </div>
         <!--<div class="row bottom-search-bg">
-					<div class="col-xs-12" >
-						<form class="form-inline">
-							<div class="form-group bottom-search-margin">
-								<div class="input-group">
-									<div class="input-group-addon search-button"><img src="./assets/img/Search-white.png"></div>
-									<input type="text" class="form-control search-box" placeholder="Close">
-									<div class="input-group-addon choose-option">
-										<div class="dropup">
-											<a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/dollar.png" class="money-icon"></a>
-												<ul class="dropdown-menu scrollable-bottom-menu">
-													<li><a href="#"></a><img src="./assets/img/trending.png"></li>
-													<li><a href="#"></a><p>TRENDING</p></li>
-													<li><a href="#"></a><img src="./assets/img/best-price.png"></li>
-													<li><a href="#"></a><p>BEST PRICE</p></li>
-													<li><a href="#"></a><img src="./assets/img/luxury.png"></li>
-													<li><a href="#"></a><p>LUXURY</p></li>
-										</div>
-									</div>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div> -->
+                    <div class="col-xs-12" >
+                        <form class="form-inline">
+                            <div class="form-group bottom-search-margin">
+                                <div class="input-group">
+                                    <div class="input-group-addon search-button"><img src="./assets/img/Search-white.png"></div>
+                                    <input type="text" class="form-control search-box" placeholder="Close">
+                                    <div class="input-group-addon choose-option">
+                                        <div class="dropup">
+                                            <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/dollar.png" class="money-icon"></a>
+                                                <ul class="dropdown-menu scrollable-bottom-menu">
+                                                    <li><a href="#"></a><img src="./assets/img/trending.png"></li>
+                                                    <li><a href="#"></a><p>TRENDING</p></li>
+                                                    <li><a href="#"></a><img src="./assets/img/best-price.png"></li>
+                                                    <li><a href="#"></a><p>BEST PRICE</p></li>
+                                                    <li><a href="#"></a><img src="./assets/img/luxury.png"></li>
+                                                    <li><a href="#"></a><p>LUXURY</p></li>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div> -->
     </div>
     <div class="modal1">
         <!-- Place at bottom of page -->
@@ -200,9 +195,6 @@
             orientation: "vertical"
         });
     });
-	
-	
-	
     </script>
 </body>
 <script>
@@ -269,7 +261,7 @@ function settext(text) {
 .divCpicker {
     height: 350px;
     position: 'absolute';
- left: 0;
+    left: 0;
     top: 0;
     font-size: 10px;
     width: auto;
