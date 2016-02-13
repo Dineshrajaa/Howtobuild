@@ -1327,7 +1327,7 @@
 		}
 		
 		.discounted-price-in-pop-up {
-		    font-size: 29px;
+		    font-size: 23px;
 		    font-family: 'Avenir Next Bold';
 		    font-weight: bold;
 		    color: #000;
@@ -1349,7 +1349,7 @@
 		}
 		
 		.retail-price-in-popup {
-		    font-size: 14px;
+		    font-size: 12px;
 		    font-family: 'Avenir Next Medium';
 		    text-decoration: line-through;
 		    margin-top: -12px
@@ -1377,7 +1377,7 @@
 		}
 		
 		.saved-amount-in-popup {
-		    font-size: 14px;
+		    font-size: 12px;
 		    font-family: 'Avenir Next Medium';
 		    margin-top: -11px;
 		    text-align: right;

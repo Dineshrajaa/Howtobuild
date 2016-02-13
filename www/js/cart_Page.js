@@ -704,7 +704,7 @@
 					}
 					console.warn(product);
 					return '<img src="' + imgUrl + '" class="img-responsive items" data-carid="myModal' + uniqueId + '" onclick="setSelectedProduct(this)" id="' + product.fields.id + '" alt=' + uniqueId + ' data-toggle="" data-target="#myModal' + uniqueId + '">\
-								<p class=""></p>' + getModalHTML(uniqueId, product, imgUrl) +
+								' + getModalHTML(uniqueId, product, imgUrl) +
 				            '<div class="row border-outline">\
 									<div class="col-xs-12 pic" >\
 										<p ><img src="./assets/img/like.png"  class="like" data-favorite="like" data-purchaseurl="' + product.fields.purchase_url + '" id="' + product.fields.id + 'like"><span style="text-decoration: none!important;" data-toggle="modal" data-target="#myModal' + uniqueId + '">' + product.fields.brand + '</span>\
@@ -741,7 +741,7 @@
 								<div class="modal-content  ">\
 									<div class="modal-body">\
 										<img src="./assets/img/pop-up-close.png" class="pop-up-close-icon " onclick="$(\'#myModal' + uniqueId + '\').modal(\'hide\')">\
-										<div id="myCarousel' + uniqueId + '" class="carousel slide" data-ride="carousel">\
+										<div id="myCarousel' + uniqueId + '" class="carousel slide" data-ride="carousel" data-pause="true" data-interval="false">\
 											<ol class="carousel-indicators top-margin-indicators">\
 												<li data-target="#myCarousel' + uniqueId + '" data-slide-to="0" class="active"></li>\
 												<li data-target="#myCarousel' + uniqueId + '" data-slide-to="1"></li>\
@@ -944,6 +944,7 @@
 				    var modalc = $(e.target).find(".carousel");
 				    var hammerobj = new Hammer(modalc[0]);
 				    modalc.carousel({
+				    	pause:true,
 				        interval: false
 				    });
 				    modalc.carousel('pause');
@@ -1089,7 +1090,8 @@
 				            //alert('ajaxstopp')
 				            $body.removeClass("loading");
 				            $('.carousel').carousel({
-				                pause: 'true'
+				                pause: 'true',
+				                interval:false
 				            })
 				        },
 				        contentType: "application/json",
