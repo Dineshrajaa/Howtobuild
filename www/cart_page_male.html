@@ -9,6 +9,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/spectrum.css" rel="stylesheet">
     <link rel="stylesheet" href="css/odometer.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <script type="text/javascript" src="js/lib/textilate/jquery.lettering.js"></script>
+    <script type="text/javascript" src="js/lib/textilate/jquery.textillate.js"></script>
     <script type="text/javascript" src="hammer.js"></script>
     <script src="js/lib/odometer.js"></script>
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -69,19 +72,19 @@
                 <div class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png" class="pop-menu-filter"></a>
                     <ul class="dropdown-menu needsclick scrollable-menu-filter">
-                        <li class="lipadding">
+                        <li class="">
                             <a href="#"></a>
                             <!-- <p class="all-text" id="maleall">ALL</p> -->
                             <img src="./assets/img/all_25x36.png" id="maleall" />
                         </li>
-                        <li class="lipadding">
-                            <a href="#"></a><img src="./assets/img/M_Shirt_30x30.png" id="clothingimg"></li>
-                        <li class="lipadding">
+                        <li class="">
+                            <a href="#"></a><img src="./assets/img/shirt_.png" id="clothingimg"></li>
+                        <li class="">
                             <a href="#"></a><img src="./assets/img/F_Rose_30x30.png" id="watchimg"></li>
-                        <li class="lipadding">
-                            <a href="#"></a><img src="./assets/img/M_headphone_30x30.png" id='gadgetimg'></li>
-                        <li class="lipadding">
-                            <a href="#"></a><img src="./assets/img/M_tent_30x30.png" id='cycleimg'></li>
+                        <li class="">
+                            <a href="#"></a><img src="./assets/img/Headphone_.png" id='gadgetimg'></li>
+                        <li class="">
+                            <a href="#"></a><img src="./assets/img/tent_.png" id='cycleimg'></li>
                     </ul>
                 </div>
             </div>
@@ -101,10 +104,10 @@
                                    <li class="cream-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important"><img src="./assets/img/Pink_35x25.png"></li>
                                     <li class="black-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important"><img src="./assets/img/black-gradient_35x25.png"></li>
                                     <li class="pink-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important"><img src="./assets/img/White-gradient_35x25.png"></li> -->
-                        <li style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter(ALL)"><img src="./assets/img/all_35x25.png" /></li>
-                        <li class="pink-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter('white')"><img src="./assets/img/White-gradient_35x25.png"></li>
-                        <li class="black-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter('black')"><img src="./assets/img/black-gradient_35x25.png"></li>
-                        <li class="cream-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter('lightpink')"><img src="./assets/img/Pink_35x25.png"></li>
+                        <li onclick="callforcolorfilter(ALL)"><img src="./assets/img/all_35x25.png" /></li>
+                        <li class="pink-color" onclick="callforcolorfilter('white')"><img src="./assets/img/White-gradient_35x25.png"></li>
+                        <li class="black-color" onclick="callforcolorfilter('black')"><img src="./assets/img/black-gradient_35x25.png"></li>
+                        <li class="cream-color" onclick="callforcolorfilter('lightpink')"><img src="./assets/img/Pink_35x25.png"></li>
                     </ul>
                     <!-- <div id="divColorPicker" style="display:none; overflow:visible;position:absolute;background-color:#000">
                         <div id="divColorName" style="background-color:#fff;width:100%;padding:auto;border:3px solid #000;text-align:center">

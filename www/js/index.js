@@ -27,6 +27,12 @@ $(function() {
     };
 })(jQuery);
 
+document.addEventListener("deviceready", function() {
+    if (cordova.platformId == 'android') {
+        StatusBar.backgroundColorByHexString("#000000"); // set the status bar color as black
+    }
+}, false);
+
 var loginMethods = {
     /*Landing page methods*/
     getFacebookProfileInfo: function(authResponse) {
@@ -95,7 +101,7 @@ var loginMethods = {
                 console.log('profile info fail', error);
             });
         } else {
-        	commonMethods.showAlert("Please Connect to Internet"); // No internet 
+            commonMethods.showAlert("Please Connect to Internet"); // No internet 
         }
     },
     setUserInfo: function(user_data) {
@@ -243,8 +249,8 @@ var loginMethods = {
 
 var commonMethods = {
     showAlert: function(alertmessage, title) {
-    	title=title?title:"Price";
-        navigator.notification.alert(alertmessage, function(){}, title, 'OK');
+        title = title ? title : "Price";
+        navigator.notification.alert(alertmessage, function() {}, title, 'OK');
     },
     checkConnection: function() {
         //callCount = 0;

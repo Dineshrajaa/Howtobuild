@@ -32,7 +32,7 @@
         <icon height="50" src="res/ios/icon-50.png" width="50" />
         <icon height="100" src="res/ios/icon-50@2x.png" width="100" />
     </platform>
-    <plugin name="cordova-plugin-whitelist" spec="1" />
+    
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -51,13 +51,17 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <preference name="StatusBarBackgroundColor" value="#000000" /> <!-- Set status bar color -->
+        <preference name="StatusBarOverlaysWebView" value="false" /> <!-- Separate statusbar from app -->
     </platform>
     <plugin name="phonegap-facebook-plugin" spec="~0.12.0">
         <param name="APP_ID" value="1047876051936088" />
         <param name="APP_NAME" value="Price-Dev" />
     </plugin>
+    <plugin name="cordova-plugin-whitelist" spec="1" />s
     <plugin name="cordova-plugin-themeablebrowser" spec="~0.2.12" />
-    <plugin name="cordova-plugin-x-toast" spec="~2.4.0" />
+    <!-- <plugin name="cordova-plugin-x-toast" spec="~2.4.0" /> -->
     <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />
     <plugin name="cordova-plugin-network-information" spec="~1.2.0" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.1.1" />
 </widget>

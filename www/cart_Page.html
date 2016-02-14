@@ -11,6 +11,9 @@
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/spectrum.css" rel="stylesheet">
     <link rel="stylesheet" href="css/odometer.css" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <script type="text/javascript" src="js/lib/textilate/jquery.lettering.js"></script>
+    <script type="text/javascript" src="js/lib/textilate/jquery.textillate.js"></script>
     <script type="text/javascript" src="hammer.js"></script>
     <script src="js/lib/odometer.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
@@ -69,19 +72,19 @@
                 <div class="dropdown">
                     <a class="dropdown-toggle needsclick" data-toggle="dropdown"> <img src="./assets/img/Filter_white.png" class="pop-menu-filter"></a>
                     <ul class="dropdown-menu scrollable-menu-filter">
-                        <li class="lipadding">
+                        <li class="">
                             <a href="#"></a>
                             <img src="./assets/img/all_25x36.png" id="alltext" />
                             <!-- <p class="all-text" id="alltext">ALL</p> -->
                         </li>
-                        <li class="lipadding">
-                            <a href="#"></a><img src="./assets/img/f_dress_30x30.png" id="clothingimg" /></li>
-                        <li class="lipadding">
-                            <a href="#"></a><img src="./assets/img/F_Ring_30x30.png" id="necklaceimg"></li>
-                        <li class="lipadding">
-                            <a href="#"></a><img src="./assets/img/F_bag_30x30.png" id="purseimg"></li>
-                        <li class="lipadding">
-                            <a href="#"></a><img src="./assets/img/F_Rose_30x30.png" id="sandleimg"></li>
+                        <li class="">
+                            <a href="#"></a><img src="./assets/img/Dress_icon.png" id="clothingimg" /></li>
+                        <li class="">
+                            <a href="#"></a><img src="./assets/img/Ring_.png" id="necklaceimg"></li>
+                        <li class="">
+                            <a href="#"></a><img src="./assets/img/Shopping_.png" id="purseimg"></li>
+                        <li class="">
+                            <a href="#"></a><img src="./assets/img/rose_.png" id="sandleimg"></li>
                     </ul>
                 </div>
             </div>
@@ -98,11 +101,11 @@
                         <li class="cream-color"></li>
                         <li class="black-color"></li>
                         <li class="pink-color"></li> -->
-                        <li style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter(ALL)"><img src="./assets/img/all_35x25.png" /></li>
-                        <li class="pink-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter('white')"><img src="./assets/img/White-gradient_35x25.png"></li>
+                        <li onclick="callforcolorfilter(ALL)"><img src="./assets/img/all_35x25.png" /></li>
+                        <li class="pink-color" onclick="callforcolorfilter('white')"><img src="./assets/img/White-gradient_35x25.png"></li>
                         
-                        <li class="black-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter('black')"><img src="./assets/img/black-gradient_35x25.png"></li>
-                        <li class="cream-color" style="padding-top: 0px !important; padding-bottom: 0px !important;border-style:none !important" onclick="callforcolorfilter('lightpink')"><img src="./assets/img/Pink_35x25.png"></li>
+                        <li class="black-color" onclick="callforcolorfilter('black')"><img src="./assets/img/black-gradient_35x25.png"></li>
+                        <li class="cream-color" onclick="callforcolorfilter('lightpink')"><img src="./assets/img/Pink_35x25.png"></li>
                         
                     </ul>
                     <!-- <div id="divColorPicker" style="display:none; overflow:visible;position:absolute;background-color:#000">
